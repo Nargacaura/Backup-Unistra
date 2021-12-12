@@ -1,0 +1,152 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://ui/assets/src/maps/World_Map.png" type="Texture" id=1]
+[ext_resource path="res://scripts/view/MainMenuManager.gd" type="Script" id=2]
+[ext_resource path="res://ui/assets/src/gradients/gradient.png" type="Texture" id=3]
+[ext_resource path="res://scenes/menu/MainContent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/menu/SingleplayerContent.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/menu/SettingsContent.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/menu/ProfileContent.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=8]
+[ext_resource path="res://audio/musics/Time Driving.ogg" type="AudioStream" id=9]
+[ext_resource path="res://scenes/menu/RulesContent.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/menu/CreditsContent.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/menu/MultiplayerContent.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/menu/RoomContent.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/LoginRegister.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Room_Settings.tscn" type="PackedScene" id=15]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 8 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+background_music = ExtResource( 9 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.968627, 0.945098, 0.890196, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Image" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1500.0
+margin_top = -960.0
+margin_right = 1500.0
+margin_bottom = 960.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gradient" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -960.0
+margin_bottom = 960.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainContent" parent="CenterContainer" instance=ExtResource( 4 )]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = 1070.0
+margin_bottom = 1620.0
+
+[node name="MultiplayerContent" parent="CenterContainer" instance=ExtResource( 12 )]
+visible = false
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = 1070.0
+margin_bottom = 1620.0
+
+[node name="RoomContent" parent="CenterContainer" instance=ExtResource( 13 )]
+visible = false
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = 1070.0
+margin_bottom = 1620.0
+
+[node name="SingleplayerContent" parent="CenterContainer" instance=ExtResource( 5 )]
+visible = false
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = 1070.0
+margin_bottom = 1620.0
+
+[node name="SettingsContent" parent="CenterContainer" instance=ExtResource( 6 )]
+visible = false
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = 1070.0
+margin_bottom = 1620.0
+
+[node name="ProfileContent" parent="CenterContainer" instance=ExtResource( 7 )]
+visible = false
+anchor_right = 0.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = 1070.0
+margin_bottom = 1620.0
+
+[node name="RulesContent" parent="CenterContainer" instance=ExtResource( 10 )]
+visible = false
+anchor_right = 0.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = 1070.0
+margin_bottom = 1620.0
+scroll_vertical = 100
+
+[node name="CreditsContent" parent="CenterContainer" instance=ExtResource( 11 )]
+visible = false
+anchor_right = 0.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = 1070.0
+margin_bottom = 1620.0
+
+[node name="LoginRegister" parent="." instance=ExtResource( 14 )]
+visible = false
+
+[node name="RoomSettings" parent="." instance=ExtResource( 15 )]
+visible = false

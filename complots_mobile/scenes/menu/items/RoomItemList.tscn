@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/view/menu/RoomItemList.gd" type="Script" id=1]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.439216, 0.435294, 0.827451, 0.25098 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[node name="RoomItemList" type="ColorRect"]
+margin_right = 960.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+color = Color( 0.172549, 0.172549, 0.329412, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 940.0
+margin_bottom = 80.0
+mouse_filter = 2
+custom_constants/separation = 0
+
+[node name="RoomText" type="Label" parent="MarginContainer/Content"]
+margin_top = 8.0
+margin_right = 450.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Room name | Creator | ID: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerCount" type="Label" parent="MarginContainer/Content"]
+margin_left = 450.0
+margin_top = 8.0
+margin_right = 900.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "X/8"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

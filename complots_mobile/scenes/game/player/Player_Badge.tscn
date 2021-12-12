@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/assets/src/player/player_badge/Player_Face.png" type="Texture" id=1]
+[ext_resource path="res://ui/assets/src/player/player_badge/Player_Border.png" type="Texture" id=2]
+[ext_resource path="res://ui/assets/src/player/player_badge/Player_BG.png" type="Texture" id=3]
+[ext_resource path="res://scripts/view/game/player/Player_Badge.gd" type="Script" id=4]
+
+
+[node name="Player_Badge" type="TextureButton"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 1
+texture_normal = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="Player_Face" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )

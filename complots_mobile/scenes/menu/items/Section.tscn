@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/fonts/roboto_black_60.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/assets/src/banners/title_banner.png" type="Texture" id=2]
+[ext_resource path="res://scripts/view/menu/Section.gd" type="Script" id=3]
+
+[node name="Section" type="VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 140.0
+custom_constants/separation = 40
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SectionTitle" type="TextureRect" parent="."]
+margin_right = 1080.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="SectionTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 42.0
+margin_top = -50.0
+margin_right = 383.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 1 )
+text = "Section"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SectionGrid" type="GridContainer" parent="."]
+margin_top = 140.0
+margin_right = 1080.0
+margin_bottom = 140.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2

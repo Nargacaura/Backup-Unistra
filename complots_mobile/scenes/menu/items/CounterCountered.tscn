@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/fonts/32/roboto_regular_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/fonts/32/roboto_bold_32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui/fonts/32/roboto_bold_italic_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui/fonts/32/roboto_italic_32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scripts/view/menu/CounterCountered.gd" type="Script" id=5]
+
+[node name="CounterCountered" type="RichTextLabel"]
+margin_top = 125.0
+margin_right = 470.0
+margin_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_italics_font = ExtResource( 3 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[color=#706fd3][b]Counter:[/b][/color]
+[color=#706fd3][b]Countered by:[/b][/color]"
+text = "Counter:
+Countered by:"
+scroll_active = false
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}

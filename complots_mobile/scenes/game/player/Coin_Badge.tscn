@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/assets/src/player/player_info_badge/Badge_Inner.png" type="Texture" id=2]
+[ext_resource path="res://ui/assets/src/player/player_info_badge/Badge_Border.png" type="Texture" id=3]
+
+
+
+[node name="Coin_Badge" type="TextureRect"]
+margin_left = 95.0
+margin_top = -25.0
+margin_right = 162.0
+margin_bottom = 42.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 67.0
+margin_bottom = 67.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Balance_Text" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -33.5
+margin_top = -33.5
+margin_right = 33.5
+margin_bottom = 33.5
+rect_min_size = Vector2( 67, 67 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/LoadingScreen.gd" type="Script" id=2]
+[ext_resource path="res://ui/assets/app/Loading_Screen.png" type="Texture" id=3]
+
+[node name="LoadingScreen" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.968627, 0.945098, 0.890196, 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadingTexture" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -540.0
+margin_top = -960.0
+margin_right = 540.0
+margin_bottom = 960.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LoadingTexture"]
+self_modulate = Color( 1, 1, 1, 0.2 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -384.5
+margin_top = -356.0
+margin_right = 384.5
+margin_bottom = -261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Loading..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

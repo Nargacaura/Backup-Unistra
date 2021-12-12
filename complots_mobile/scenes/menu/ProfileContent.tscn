@@ -1,0 +1,389 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://ui/fonts/roboto_black_50.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/fonts/roboto_black_60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/ProfileManager.gd" type="Script" id=3]
+[ext_resource path="res://ui/assets/src/badges/medal.png" type="Texture" id=4]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/assets/src/banners/title_banner.png" type="Texture" id=6]
+[ext_resource path="res://ui/assets/src/badges/badge_container.png" type="Texture" id=7]
+[ext_resource path="res://ui/assets/src/gradients/large_item_gradient.png" type="Texture" id=8]
+[ext_resource path="res://ui/assets/src/player/profile_photo.png" type="Texture" id=9]
+[ext_resource path="res://ui/animations/menu/profile/ProfileContent_Hide.tres" type="Animation" id=10]
+[ext_resource path="res://ui/assets/src/banners/item_banner.png" type="Texture" id=11]
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=12]
+[ext_resource path="res://ui/animations/menu/profile/ProfileContent_Show.tres" type="Animation" id=13]
+[ext_resource path="res://ui/assets/src/badges/assassin.png" type="Texture" id=14]
+[ext_resource path="res://ui/assets/src/badges/duke.png" type="Texture" id=15]
+[ext_resource path="res://ui/assets/src/badges/ambassador.png" type="Texture" id=16]
+[ext_resource path="res://ui/assets/src/badges/inquisitor.png" type="Texture" id=17]
+[ext_resource path="res://ui/assets/src/badges/contessa.png" type="Texture" id=18]
+[ext_resource path="res://ui/assets/src/badges/captain.png" type="Texture" id=19]
+[ext_resource path="res://scripts/view/LocalizedText.gd" type="Script" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="ProfileContent" type="ScrollContainer"]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 1320 )
+theme = ExtResource( 12 )
+scroll_horizontal_enabled = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1080.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 10.0
+margin_right = 1070.0
+margin_bottom = 560.0
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 404.124, 93.7616 )
+theme = ExtResource( 12 )
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageTitle" type="TextureRect" parent="CenterContainer/Content"]
+margin_right = 1060.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+texture = ExtResource( 6 )
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 42.0
+margin_top = -50.0
+margin_right = 383.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 2 )
+text = "Profile"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Content/PageTitle/Title"]
+script = ExtResource( 20 )
+text_key = "menu.profile"
+
+[node name="Button" type="Button" parent="CenterContainer/Content/PageTitle"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -36.5
+margin_bottom = 36.5
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Back"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Content/PageTitle/Button"]
+script = ExtResource( 20 )
+text_key = "menu.back"
+
+[node name="Grid" type="HBoxContainer" parent="CenterContainer/Content"]
+margin_top = 140.0
+margin_right = 1060.0
+margin_bottom = 520.0
+custom_constants/separation = 20
+
+[node name="LeftColumn" type="VBoxContainer" parent="CenterContainer/Content/Grid"]
+margin_right = 1060.0
+margin_bottom = 380.0
+
+[node name="Profile" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn"]
+margin_right = 1060.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 1060, 380 )
+texture = ExtResource( 8 )
+
+[node name="Container" type="HBoxContainer" parent="CenterContainer/Content/Grid/LeftColumn/Profile"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="VBoxContainer" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container"]
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Left"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Left/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Left/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImageContainer" type="CenterContainer" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Left"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Left/ImageContainer"]
+margin_left = 153.0
+margin_top = 41.0
+margin_right = 367.0
+margin_bottom = 255.0
+mouse_filter = 2
+texture = ExtResource( 9 )
+
+[node name="Right" type="VBoxContainer" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container"]
+margin_left = 540.0
+margin_right = 1060.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Badges"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/Header/ItemTitle/Title"]
+script = ExtResource( 20 )
+text_key = "menu.badges"
+
+[node name="BadgesContainer" type="CenterContainer" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Grid" type="GridContainer" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer"]
+margin_left = 40.0
+margin_top = 43.0
+margin_right = 480.0
+margin_bottom = 253.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 4
+
+[node name="assassin" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid"]
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 95, 95 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid/assassin"]
+modulate = Color( 0, 0, 0, 0.196078 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="captain" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid"]
+margin_left = 115.0
+margin_right = 210.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 95, 95 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid/captain"]
+modulate = Color( 0, 0, 0, 0.196078 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="duke" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid"]
+margin_left = 230.0
+margin_right = 325.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 95, 95 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid/duke"]
+modulate = Color( 0, 0, 0, 0.196078 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="contessa" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid"]
+margin_left = 345.0
+margin_right = 440.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 95, 95 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid/contessa"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_right = 95.0
+margin_bottom = 95.0
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ambassador" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid"]
+margin_top = 115.0
+margin_right = 95.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 95, 95 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid/ambassador"]
+modulate = Color( 0, 0, 0, 0.196078 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inquisitor_1" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid"]
+margin_left = 115.0
+margin_top = 115.0
+margin_right = 210.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 95, 95 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid/inquisitor_1"]
+modulate = Color( 0, 0, 0, 0.196078 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inquisitor_2" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid"]
+margin_left = 230.0
+margin_top = 115.0
+margin_right = 325.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 95, 95 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid/inquisitor_2"]
+modulate = Color( 0, 0, 0, 0.196078 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Achievements" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid"]
+margin_left = 345.0
+margin_top = 115.0
+margin_right = 440.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 95, 95 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/Profile/Container/Right/BadgesContainer/Grid/Achievements"]
+modulate = Color( 0, 0, 0, 0.196078 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageContent" type="VBoxContainer" parent="CenterContainer/Content"]
+margin_top = 560.0
+margin_right = 1060.0
+margin_bottom = 560.0
+custom_constants/separation = 40
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hide = ExtResource( 10 )
+anims/show = ExtResource( 13 )

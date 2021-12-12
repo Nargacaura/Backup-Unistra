@@ -1,0 +1,1076 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://ui/fonts/roboto_black_50.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/fonts/roboto_black_60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/view/menu/CreditsContent.gd" type="Script" id=3]
+[ext_resource path="res://ui/animations/menu/credits/CreditsContent_Show.tres" type="Animation" id=4]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/assets/src/banners/title_banner.png" type="Texture" id=6]
+[ext_resource path="res://ui/assets/src/gradients/item_gradient.png" type="Texture" id=7]
+[ext_resource path="res://ui/assets/src/gradients/large_item_gradient.png" type="Texture" id=8]
+[ext_resource path="res://ui/fonts/36/roboto_bold_italic_36.tres" type="DynamicFont" id=9]
+[ext_resource path="res://ui/animations/menu/credits/CreditsContent_Hide.tres" type="Animation" id=10]
+[ext_resource path="res://ui/assets/src/banners/item_banner.png" type="Texture" id=11]
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=12]
+[ext_resource path="res://scripts/view/LocalizedText.gd" type="Script" id=13]
+[ext_resource path="res://ui/fonts/36/roboto_italic_36.tres" type="DynamicFont" id=17]
+[ext_resource path="res://ui/fonts/36/roboto_bold_36.tres" type="DynamicFont" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="CreditsContent" type="ScrollContainer"]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 1320 )
+theme = ExtResource( 12 )
+scroll_horizontal_enabled = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1080.0
+margin_bottom = 2680.0
+size_flags_horizontal = 3
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 10.0
+margin_right = 1070.0
+margin_bottom = 2680.0
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 404.124, 93.7616 )
+theme = ExtResource( 12 )
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageTitle" type="TextureRect" parent="CenterContainer/Content"]
+margin_right = 1060.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+texture = ExtResource( 6 )
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 42.0
+margin_top = -50.0
+margin_right = 383.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 2 )
+text = "Credits"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Content/PageTitle/Title"]
+script = ExtResource( 13 )
+text_key = "menu.credits"
+
+[node name="Button" type="Button" parent="CenterContainer/Content/PageTitle"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -36.5
+margin_bottom = 36.5
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Back"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Content/PageTitle/Button"]
+script = ExtResource( 13 )
+text_key = "menu.back"
+
+[node name="Grid" type="HBoxContainer" parent="CenterContainer/Content"]
+margin_top = 140.0
+margin_right = 1060.0
+margin_bottom = 520.0
+custom_constants/separation = 20
+
+[node name="LeftColumn" type="VBoxContainer" parent="CenterContainer/Content/Grid"]
+margin_right = 1060.0
+margin_bottom = 380.0
+
+[node name="GamePlay" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn"]
+margin_right = 1060.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 1060, 380 )
+texture = ExtResource( 8 )
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/Grid/LeftColumn/GamePlay"]
+margin_right = 1060.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/Grid/LeftColumn/GamePlay/Content"]
+margin_right = 1060.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/Grid/LeftColumn/GamePlay/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/Grid/LeftColumn/GamePlay/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Class Project"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Content/Grid/LeftColumn/GamePlay/Content/Header/ItemTitle/Title"]
+script = ExtResource( 13 )
+text_key = "menu.credits.class_project"
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/Grid/LeftColumn/GamePlay/Content"]
+margin_top = 84.0
+margin_right = 1060.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_top = 20
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Text" type="RichTextLabel" parent="CenterContainer/Content/Grid/LeftColumn/GamePlay/Content/MarginContainer"]
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 1020.0
+margin_bottom = 276.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 17 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 18 )
+bbcode_enabled = true
+bbcode_text = "This game is a result of a class project at the University of Strasbourg FRANCE.
+
+It has been made by a group of 9 students, on a period of 15 weeks."
+meta_underlined = false
+text = "This game is a result of a class project at the University of Strasbourg FRANCE.
+
+It has been made by a group of 9 students, on a period of 15 weeks."
+scroll_active = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Content/Grid/LeftColumn/GamePlay/Content/MarginContainer/Text"]
+script = ExtResource( 13 )
+text_key = "menu.credits.class_project.description"
+
+[node name="PageContent" type="VBoxContainer" parent="CenterContainer/Content"]
+margin_top = 560.0
+margin_right = 1060.0
+margin_bottom = 2680.0
+custom_constants/separation = 40
+
+[node name="Authors" type="VBoxContainer" parent="CenterContainer/Content/PageContent"]
+margin_right = 1060.0
+margin_bottom = 2120.0
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SectionTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors"]
+margin_right = 1060.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 42.0
+margin_top = -50.0
+margin_right = 383.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 2 )
+text = "Authors"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SectionGrid" type="GridContainer" parent="CenterContainer/Content/PageContent/Authors"]
+margin_top = 140.0
+margin_right = 1060.0
+margin_bottom = 2120.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="NicolasL" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_right = 520.0
+margin_bottom = 380.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasL"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasL/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasL/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasL/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Nicolas L"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasL/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasL/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasL/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasL/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Core / Interface / Mobile"
+
+[node name="GabrielL" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_left = 540.0
+margin_right = 1060.0
+margin_bottom = 380.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/GabrielL"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/GabrielL/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/GabrielL/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/GabrielL/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Gabriel L"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/GabrielL/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/GabrielL/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/GabrielL/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/GabrielL/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Network / Interface"
+
+[node name="NicolasM" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_top = 400.0
+margin_right = 520.0
+margin_bottom = 780.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasM"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasM/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasM/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasM/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Nicolas M"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasM/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasM/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasM/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/NicolasM/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Core / Interface"
+
+[node name="AliM" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_left = 540.0
+margin_top = 400.0
+margin_right = 1060.0
+margin_bottom = 780.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/AliM"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/AliM/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/AliM/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/AliM/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Ali M"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/AliM/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/AliM/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/AliM/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/AliM/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Core / Network"
+
+[node name="OlgaK" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_top = 800.0
+margin_right = 520.0
+margin_bottom = 1180.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/OlgaK"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/OlgaK/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/OlgaK/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/OlgaK/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Olga K"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/OlgaK/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/OlgaK/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/OlgaK/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/OlgaK/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Core / Interface"
+
+[node name="DamienL" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_left = 540.0
+margin_top = 800.0
+margin_right = 1060.0
+margin_bottom = 1180.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/DamienL"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/DamienL/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/DamienL/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/DamienL/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Damien L"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/DamienL/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/DamienL/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/DamienL/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/DamienL/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Interface"
+
+[node name="Jean-ChristopheK" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_top = 1200.0
+margin_right = 520.0
+margin_bottom = 1580.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/Jean-ChristopheK"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/Jean-ChristopheK/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/Jean-ChristopheK/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/Jean-ChristopheK/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Jean-Christophe K"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/Jean-ChristopheK/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/Jean-ChristopheK/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/Jean-ChristopheK/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/Jean-ChristopheK/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Network / Database"
+
+[node name="RemiL" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_left = 540.0
+margin_top = 1200.0
+margin_right = 1060.0
+margin_bottom = 1580.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/RemiL"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/RemiL/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/RemiL/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/RemiL/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Rémi L"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/RemiL/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/RemiL/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/RemiL/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/RemiL/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Interface"
+
+[node name="MickaelK" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid"]
+margin_top = 1600.0
+margin_right = 520.0
+margin_bottom = 1980.0
+theme = ExtResource( 12 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/MickaelK"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/MickaelK/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/MickaelK/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/MickaelK/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Mickaël K"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/MickaelK/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/MickaelK/Content/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 495.0
+margin_bottom = 271.0
+
+[node name="Desc" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/MickaelK/Content/MarginContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Team" type="Label" parent="CenterContainer/Content/PageContent/Authors/SectionGrid/MickaelK/Content/MarginContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 470.0
+margin_bottom = 246.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Interface"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hide = ExtResource( 10 )
+anims/show = ExtResource( 4 )

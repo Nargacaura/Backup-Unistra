@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=1]
+
+[node name="PlayerItemList" type="ColorRect"]
+margin_right = 440.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 74 )
+color = Color( 0.172549, 0.172549, 0.329412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 15.0
+margin_right = 430.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 1 )
+text = "Username"
+valign = 1

@@ -1,0 +1,127 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://ui/assets/src/player/player_badge/Player_Face.png" type="Texture" id=1]
+[ext_resource path="res://ui/assets/src/player/player_badge/Player_Border.png" type="Texture" id=2]
+[ext_resource path="res://ui/assets/src/player/player_badge/Player_BG.png" type="Texture" id=3]
+[ext_resource path="res://scripts/view/game/player/PlayerView.gd" type="Script" id=4]
+[ext_resource path="res://scenes/game/player/Coin_Badge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game/player/Cards.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=7]
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=8]
+[ext_resource path="res://ui/assets/src/badges/captain.png" type="Texture" id=9]
+[ext_resource path="res://ui/assets/src/badges/assassin.png" type="Texture" id=10]
+[ext_resource path="res://ui/assets/src/badges/duke.png" type="Texture" id=11]
+[ext_resource path="res://ui/assets/src/badges/ambassador.png" type="Texture" id=12]
+[ext_resource path="res://ui/assets/src/badges/inquisitor.png" type="Texture" id=13]
+[ext_resource path="res://ui/assets/src/badges/contessa.png" type="Texture" id=14]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 1.0
+content_margin_bottom = 1.0
+bg_color = Color( 0.94902, 0.94902, 0.94902, 1 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.333333, 0.333333, 0.333333, 1, 1, 1, 1, 0.392157 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.763636 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.381818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 1
+emission_sphere_radius = 50.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 75.0
+angular_velocity = 360.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 10.0
+linear_accel_random = 1.0
+angle = 45.0
+scale = 30.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[node name="Player" type="TextureButton"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 1
+theme = ExtResource( 8 )
+texture_normal = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cards_textures = [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ) ]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_Face" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin_Badge" parent="." instance=ExtResource( 5 )]
+
+[node name="Cards" parent="." instance=ExtResource( 6 )]
+
+[node name="Username" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -49.0
+margin_top = -19.0
+margin_right = 48.0
+margin_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Particles2D" type="Particles2D" parent="."]
+show_behind_parent = true
+position = Vector2( 66.2211, 71.3545 )
+emitting = false
+amount = 30
+lifetime = 1.5
+process_material = SubResource( 6 )
+[connection signal="mouse_entered" from="." to="." method="_on_Player_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Player_mouse_exited"]

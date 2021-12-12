@@ -1,0 +1,300 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/fonts/roboto_bold_60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui/themes/resources/green_button/green_btn_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://scripts/view/LocalizedText.gd" type="Script" id=4]
+[ext_resource path="res://ui/fonts/roboto_black_50.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/themes/resources/green_button/green_btn_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://ui/themes/resources/green_button/green_btn_hover.tres" type="StyleBox" id=7]
+[ext_resource path="res://ui/themes/resources/panel.tres" type="StyleBox" id=8]
+[ext_resource path="res://ui/themes/resources/cards/choice_card_menu.tres" type="StyleBox" id=9]
+[ext_resource path="res://ui/assets/src/badges/ambassador.png" type="Texture" id=10]
+[ext_resource path="res://ui/assets/src/badges/inquisitor.png" type="Texture" id=11]
+[ext_resource path="res://ui/fonts/roboto_black_60.tres" type="DynamicFont" id=12]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=13]
+[ext_resource path="res://scenes/Room_Settings.gd" type="Script" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.439216, 0.435294, 0.827451, 0.25098 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[node name="RoomSettings" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+color = Color( 0, 0, 0, 0.501961 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+margin_left = 140.0
+margin_top = 360.0
+margin_right = 940.0
+margin_bottom = 1560.0
+rect_min_size = Vector2( 800, 1200 )
+custom_styles/panel = ExtResource( 8 )
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel/Content"]
+margin_right = 800.0
+margin_bottom = 1200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 60
+custom_constants/margin_top = 60
+custom_constants/margin_left = 60
+custom_constants/margin_bottom = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsContent" type="VBoxContainer" parent="CenterContainer/Panel/Content/MarginContainer"]
+margin_left = 60.0
+margin_top = 60.0
+margin_right = 740.0
+margin_bottom = 1140.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="Container" type="Control" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent"]
+margin_top = 22.0
+margin_right = 680.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Back" type="Button" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/Container"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -81.0
+margin_bottom = 43.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = ExtResource( 13 )
+text = "Back"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/Container/Back"]
+script = ExtResource( 4 )
+text_key = "menu.back"
+
+[node name="Title" type="Label" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent"]
+margin_top = 102.0
+margin_right = 680.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 0, 130 )
+custom_fonts/font = ExtResource( 12 )
+text = "Room Settings"
+align = 1
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/Title"]
+script = ExtResource( 4 )
+text_key = "menu.room_settings"
+
+[node name="RoomName" type="VBoxContainer" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent"]
+margin_top = 272.0
+margin_right = 680.0
+margin_bottom = 472.0
+rect_min_size = Vector2( 0, 200 )
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/RoomName"]
+margin_right = 680.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+text = "Room Name"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/RoomName/Label"]
+script = ExtResource( 4 )
+text_key = "menu.room_name"
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/RoomName"]
+margin_top = 75.0
+margin_right = 680.0
+margin_bottom = 166.0
+theme = ExtResource( 1 )
+placeholder_text = "Room Name"
+placeholder_alpha = 0.2
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/RoomName/LineEdit"]
+script = ExtResource( 4 )
+text_key = "menu.room_name"
+
+[node name="CardChoice" type="HBoxContainer" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent"]
+margin_top = 512.0
+margin_right = 680.0
+margin_bottom = 732.0
+
+[node name="Ambassador" type="CenterContainer" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice"]
+margin_right = 338.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+
+[node name="Card" type="Label" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice/Ambassador"]
+margin_left = 94.0
+margin_right = 244.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 150, 220 )
+rect_pivot_offset = Vector2( 75, 110 )
+mouse_filter = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 2 )
+text = "Am"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice/Ambassador/Card"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 9.99998
+focus_mode = 0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice/Ambassador/Card"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -50.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texture" type="TextureRect" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice/Ambassador/Card/CenterContainer"]
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 130, 130 )
+mouse_filter = 2
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inquisitor" type="CenterContainer" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice"]
+margin_left = 342.0
+margin_right = 680.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+
+[node name="Card" type="Label" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice/Inquisitor"]
+margin_left = 94.0
+margin_right = 244.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 150, 220 )
+rect_pivot_offset = Vector2( 75, 110 )
+mouse_filter = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 2 )
+text = "In"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice/Inquisitor/Card"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 9.99998
+focus_mode = 0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice/Inquisitor/Card"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -50.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texture" type="TextureRect" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/CardChoice/Inquisitor/Card/CenterContainer"]
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 130, 130 )
+mouse_filter = 2
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Error" type="Label" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent"]
+margin_top = 772.0
+margin_right = 680.0
+margin_bottom = 897.0
+rect_min_size = Vector2( 0, 125 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.752941, 0.223529, 0.168627, 1 )
+autowrap = true
+
+[node name="Create" type="CenterContainer" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent"]
+margin_top = 937.0
+margin_right = 680.0
+margin_bottom = 1058.0
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/Create"]
+margin_left = 209.0
+margin_right = 470.0
+margin_bottom = 121.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+text = "Create"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/MarginContainer/SettingsContent/Create/Button"]
+script = ExtResource( 4 )
+text_key = "menu.create"

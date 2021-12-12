@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/themes/resources/button_thick_border/button_thick_pressed.tres" type="StyleBox" id=1]
+[ext_resource path="res://ui/themes/resources/button_thick_border/button_thick_hover.tres" type="StyleBox" id=2]
+[ext_resource path="res://ui/themes/resources/button_thick_border/button_thick_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=4]
+
+[node name="Action_Button" type="Button"]
+margin_right = 540.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+focus_mode = 0
+size_flags_horizontal = 3
+theme = ExtResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "Action"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}

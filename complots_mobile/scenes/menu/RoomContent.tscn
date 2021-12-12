@@ -1,0 +1,552 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://ui/fonts/roboto_black_50.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/fonts/roboto_black_60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui/assets/src/gradients/item_gradient.png" type="Texture" id=3]
+[ext_resource path="res://ui/assets/src/gradients/long_item_gradient.png" type="Texture" id=4]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/assets/src/banners/title_banner.png" type="Texture" id=6]
+[ext_resource path="res://ui/assets/src/Logos/logo_play.png" type="Texture" id=7]
+[ext_resource path="res://ui/fonts/32/roboto_black_32.tres" type="DynamicFont" id=8]
+[ext_resource path="res://ui/fonts/32/roboto_bold_italic_32.tres" type="DynamicFont" id=9]
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=10]
+[ext_resource path="res://ui/assets/src/banners/item_banner.png" type="Texture" id=11]
+[ext_resource path="res://ui/fonts/32/roboto_italic_32.tres" type="DynamicFont" id=12]
+[ext_resource path="res://ui/animations/menu/settings/SettingsContent_Hide.tres" type="Animation" id=13]
+[ext_resource path="res://ui/animations/menu/settings/SettingsContent_Show.tres" type="Animation" id=14]
+[ext_resource path="res://ui/fonts/32/roboto_regular_32.tres" type="DynamicFont" id=15]
+[ext_resource path="res://ui/fonts/32/roboto_bold_32.tres" type="DynamicFont" id=16]
+[ext_resource path="res://ui/fonts/src/Roboto-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://ui/assets/src/Logos/small_send_icon.png" type="Texture" id=18]
+[ext_resource path="res://ui/assets/src/Logos/logo_settings.png" type="Texture" id=19]
+[ext_resource path="res://scripts/view/menu/RoomContent.gd" type="Script" id=20]
+[ext_resource path="res://scripts/view/LocalizedText.gd" type="Script" id=21]
+[ext_resource path="res://ui/assets/src/badges/inquisitor.png" type="Texture" id=22]
+[ext_resource path="res://ui/assets/src/badges/ambassador.png" type="Texture" id=23]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 20.0
+content_margin_right = 5.0
+bg_color = Color( 0.172549, 0.172549, 0.329412, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 20.0
+content_margin_right = 5.0
+bg_color = Color( 0.172549, 0.172549, 0.329412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.278431, 0.278431, 0.529412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 2
+font_data = ExtResource( 17 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.439216, 0.435294, 0.827451, 0.25098 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxFlat" id=12]
+draw_center = false
+border_width_bottom = 5
+border_color = Color( 0.968627, 0.945098, 0.890196, 1 )
+
+[node name="RoomContent" type="VBoxContainer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -660.0
+margin_bottom = 660.0
+grow_horizontal = 2
+rect_clip_content = true
+theme = ExtResource( 10 )
+custom_constants/separation = 40
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+ambassador_sprite = ExtResource( 23 )
+inquisitor_sprite = ExtResource( 22 )
+
+[node name="PageTitle" type="TextureRect" parent="."]
+margin_right = 1080.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+texture = ExtResource( 6 )
+
+[node name="Title" type="Label" parent="PageTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 42.0
+margin_top = -50.0
+margin_right = 383.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 2 )
+text = "Room | 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="PageTitle"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -36.5
+margin_bottom = 36.5
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Back"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="PageTitle/Button"]
+script = ExtResource( 21 )
+text_key = "menu.back"
+
+[node name="Grid" type="GridContainer" parent="."]
+margin_top = 140.0
+margin_right = 1080.0
+margin_bottom = 1320.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+
+[node name="Top" type="GridContainer" parent="Grid"]
+margin_right = 1060.0
+margin_bottom = 780.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="LeftColumn" type="VBoxContainer" parent="Grid/Top"]
+margin_right = 520.0
+margin_bottom = 780.0
+
+[node name="Players" type="TextureRect" parent="Grid/Top/LeftColumn"]
+margin_right = 520.0
+margin_bottom = 780.0
+rect_min_size = Vector2( 520, 780 )
+mouse_filter = 0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="Grid/Top/LeftColumn/Players"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Control" parent="Grid/Top/LeftColumn/Players/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="Grid/Top/LeftColumn/Players/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Grid/Top/LeftColumn/Players/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Players"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="Grid/Top/LeftColumn/Players/Content/Header/ItemTitle/Title"]
+script = ExtResource( 21 )
+text_key = "menu.players"
+
+[node name="Character" type="TextureRect" parent="Grid/Top/LeftColumn/Players/Content/Header"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="MarginContainer" parent="Grid/Top/LeftColumn/Players/Content"]
+margin_top = 80.0
+margin_right = 520.0
+margin_bottom = 780.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_top = 40
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 40
+
+[node name="PlayerList" type="VBoxContainer" parent="Grid/Top/LeftColumn/Players/Content/Content"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 480.0
+margin_bottom = 660.0
+mouse_filter = 2
+custom_constants/separation = 4
+
+[node name="WaitingPlayers" type="MarginContainer" parent="Grid/Top/LeftColumn/Players/Content/Content/PlayerList"]
+margin_right = 440.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 74 )
+mouse_filter = 2
+custom_constants/margin_right = 10
+custom_constants/margin_top = 0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Grid/Top/LeftColumn/Players/Content/Content/PlayerList/WaitingPlayers"]
+modulate = Color( 1, 1, 1, 0.2 )
+margin_left = 10.0
+margin_top = 18.0
+margin_right = 430.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 15 )
+text = "Waiting for players..."
+align = 1
+valign = 1
+
+[node name="LocalizedText" type="Node" parent="Grid/Top/LeftColumn/Players/Content/Content/PlayerList/WaitingPlayers/Label"]
+script = ExtResource( 21 )
+text_key = "menu.waiting_players"
+
+[node name="CenterColumn" type="VBoxContainer" parent="Grid/Top"]
+margin_left = 540.0
+margin_right = 1060.0
+margin_bottom = 780.0
+
+[node name="Chat" type="TextureRect" parent="Grid/Top/CenterColumn"]
+margin_right = 520.0
+margin_bottom = 780.0
+rect_min_size = Vector2( 520, 780 )
+mouse_filter = 0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="Grid/Top/CenterColumn/Chat"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="MarginContainer" parent="Grid/Top/CenterColumn/Chat/Content"]
+margin_right = 520.0
+margin_bottom = 780.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Grid/Top/CenterColumn/Chat/Content/Content"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 500.0
+margin_bottom = 760.0
+custom_constants/separation = 20
+
+[node name="ChatSection" type="ColorRect" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer"]
+margin_right = 480.0
+margin_bottom = 640.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.439216, 0.435294, 0.827451, 0.2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer/ChatSection"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatText" type="RichTextLabel" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer/ChatSection/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 460.0
+margin_bottom = 620.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_italics_font = ExtResource( 9 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 8 )
+custom_fonts/normal_font = ExtResource( 15 )
+bbcode_enabled = true
+bbcode_text = "[color=#777777]Welcome to <room_name>.[/color]"
+text = "Welcome to <room_name>."
+scroll_following = true
+
+[node name="UserInput" type="ColorRect" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer"]
+margin_top = 660.0
+margin_right = 480.0
+margin_bottom = 740.0
+rect_min_size = Vector2( 0, 80 )
+color = Color( 0.439216, 0.435294, 0.827451, 0.2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer/UserInput"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer/UserInput/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 475.0
+margin_bottom = 75.0
+custom_constants/separation = 5
+
+[node name="UserInput" type="LineEdit" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer/UserInput/MarginContainer/HBoxContainer"]
+margin_right = 395.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = ExtResource( 16 )
+placeholder_text = "Message..."
+placeholder_alpha = 0.25
+
+[node name="LocalizedText" type="Node" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer/UserInput/MarginContainer/HBoxContainer/UserInput"]
+script = ExtResource( 21 )
+text_key = "menu.message_input"
+
+[node name="SendButton" type="Button" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer/UserInput/MarginContainer/HBoxContainer"]
+margin_left = 400.0
+margin_right = 470.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+focus_mode = 0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Icon" type="TextureRect" parent="Grid/Top/CenterColumn/Chat/Content/Content/VBoxContainer/UserInput/MarginContainer/HBoxContainer/SendButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bottom" type="GridContainer" parent="Grid"]
+margin_top = 800.0
+margin_right = 1060.0
+margin_bottom = 1180.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="Settings" type="TextureRect" parent="Grid/Bottom"]
+margin_right = 520.0
+margin_bottom = 380.0
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="Grid/Bottom/Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="VBoxContainer" parent="Grid/Bottom/Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="Grid/Bottom/Settings/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="Grid/Bottom/Settings/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Grid/Bottom/Settings/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="Grid/Bottom/Settings/Content/Header/ItemTitle/Title"]
+script = ExtResource( 21 )
+text_key = "menu.settings"
+
+[node name="ItemContainer" type="CenterContainer" parent="Grid/Bottom/Settings/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureRect" parent="Grid/Bottom/Settings/Content/ItemContainer"]
+margin_left = 135.0
+margin_top = 23.0
+margin_right = 385.0
+margin_bottom = 273.0
+mouse_filter = 2
+texture = ExtResource( 19 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Start" type="Control" parent="Grid/Bottom"]
+margin_left = 540.0
+margin_right = 1060.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 520, 380 )
+mouse_filter = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Button" type="Button" parent="Grid/Bottom/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="Grid/Bottom/Start/Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -80.0
+margin_right = 80.0
+margin_bottom = 80.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartText" type="Button" parent="Grid/Bottom/Start"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = -73.0
+grow_horizontal = 0
+rect_min_size = Vector2( 300, 0 )
+mouse_filter = 2
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = ExtResource( 1 )
+text = "Start"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="Grid/Bottom/Start/StartText"]
+script = ExtResource( 21 )
+text_key = "menu.start"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hide = ExtResource( 13 )
+anims/show = ExtResource( 14 )

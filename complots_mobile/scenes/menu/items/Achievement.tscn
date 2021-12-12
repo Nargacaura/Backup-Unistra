@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/assets/src/badges/medal.png" type="Texture" id=2]
+[ext_resource path="res://ui/assets/src/gradients/item_gradient.png" type="Texture" id=3]
+[ext_resource path="res://ui/assets/src/banners/item_banner.png" type="Texture" id=4]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scripts/view/menu/Achievement.gd" type="Script" id=6]
+
+
+[node name="Achievement" type="TextureRect"]
+margin_right = 520.0
+margin_bottom = 380.0
+theme = ExtResource( 1 )
+texture = ExtResource( 3 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Medal" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -103.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 103.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ItemTitle" type="TextureRect" parent="Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Title" type="Label" parent="Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.0
+margin_right = 246.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 5 )
+text = "Title"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ContentContainer" type="CenterContainer" parent="Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="Content/ContentContainer"]
+margin_left = 30.0
+margin_top = 39.0
+margin_right = 490.0
+margin_bottom = 257.0
+custom_constants/separation = 40
+
+[node name="Text" type="Label" parent="Content/ContentContainer/Content"]
+margin_right = 460.0
+margin_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 460, 90 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "Achievement text"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Slider" type="VBoxContainer" parent="Content/ContentContainer/Content"]
+margin_top = 130.0
+margin_right = 460.0
+margin_bottom = 218.0
+
+[node name="HSlider" type="HSlider" parent="Content/ContentContainer/Content/Slider"]
+margin_right = 460.0
+margin_bottom = 41.0
+theme = ExtResource( 1 )
+editable = false
+scrollable = false
+
+[node name="BottomText" type="HBoxContainer" parent="Content/ContentContainer/Content/Slider"]
+margin_top = 45.0
+margin_right = 460.0
+margin_bottom = 88.0
+custom_constants/separation = 0
+
+[node name="Amount" type="Label" parent="Content/ContentContainer/Content/Slider/BottomText"]
+margin_right = 214.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.278431, 0.278431, 0.529412, 1 )
+text = "0"
+align = 2
+valign = 1
+
+[node name="Slash" type="Label" parent="Content/ContentContainer/Content/Slider/BottomText"]
+margin_left = 214.0
+margin_right = 245.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = " / "
+valign = 1
+
+[node name="MaxAmount" type="Label" parent="Content/ContentContainer/Content/Slider/BottomText"]
+margin_left = 245.0
+margin_right = 460.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "100"
+valign = 1

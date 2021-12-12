@@ -1,0 +1,558 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://ui/fonts/roboto_black_50.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/fonts/roboto_black_60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui/assets/src/gradients/item_gradient.png" type="Texture" id=3]
+[ext_resource path="res://ui/assets/src/gradients/long_item_gradient.png" type="Texture" id=4]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/assets/src/banners/title_banner.png" type="Texture" id=6]
+[ext_resource path="res://ui/assets/src/characters/character_inquisitor.png" type="Texture" id=7]
+[ext_resource path="res://ui/assets/src/characters/character_ambassador.png" type="Texture" id=8]
+[ext_resource path="res://ui/assets/src/Logos/logo_play.png" type="Texture" id=9]
+[ext_resource path="res://ui/fonts/roboto_black_200.tres" type="DynamicFont" id=10]
+[ext_resource path="res://ui/assets/src/banners/item_banner.png" type="Texture" id=11]
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=12]
+[ext_resource path="res://scripts/view/menu/SingleplayerContent.gd" type="Script" id=13]
+[ext_resource path="res://ui/assets/src/gradients/btn_gradient.png" type="Texture" id=14]
+[ext_resource path="res://ui/assets/src/gradients/btn_gradient_flip.png" type="Texture" id=15]
+[ext_resource path="res://ui/animations/menu/singleplayer/SinglePlayerContent_Hide.tres" type="Animation" id=16]
+[ext_resource path="res://ui/animations/menu/singleplayer/SinglePlayerContent_Show.tres" type="Animation" id=17]
+[ext_resource path="res://scripts/view/LocalizedText.gd" type="Script" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.439216, 0.435294, 0.827451, 0.25098 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.439216, 0.435294, 0.827451, 0.25098 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+draw_center = false
+border_width_bottom = 5
+border_color = Color( 0.968627, 0.945098, 0.890196, 1 )
+
+[node name="SingleplayerContent" type="VBoxContainer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -660.0
+margin_bottom = 660.0
+grow_horizontal = 2
+rect_clip_content = true
+theme = ExtResource( 12 )
+custom_constants/separation = 40
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageTitle" type="TextureRect" parent="."]
+margin_right = 1080.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+texture = ExtResource( 6 )
+
+[node name="Title" type="Label" parent="PageTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 42.0
+margin_top = -50.0
+margin_right = 383.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 2 )
+text = "Singleplayer"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="PageTitle/Title"]
+script = ExtResource( 18 )
+text_key = "menu.singleplayer"
+
+[node name="Button" type="Button" parent="PageTitle"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -36.5
+margin_bottom = 36.5
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Back"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="GridContainer" parent="."]
+margin_top = 140.0
+margin_right = 1080.0
+margin_bottom = 1320.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="GridContainer" parent="Grid"]
+margin_right = 1060.0
+margin_bottom = 780.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="LeftColumn" type="VBoxContainer" parent="Grid/Top"]
+margin_right = 520.0
+margin_bottom = 780.0
+
+[node name="PlayerCount" type="TextureRect" parent="Grid/Top/LeftColumn"]
+margin_right = 520.0
+margin_bottom = 780.0
+rect_min_size = Vector2( 520, 780 )
+mouse_filter = 0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Buttons" type="HBoxContainer" parent="Grid/Top/LeftColumn/PlayerCount"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minus" type="TextureButton" parent="Grid/Top/LeftColumn/PlayerCount/Buttons"]
+modulate = Color( 0.439216, 0.435294, 0.827451, 0.501961 )
+margin_right = 260.0
+margin_bottom = 781.0
+focus_mode = 0
+size_flags_horizontal = 3
+enabled_focus_mode = 0
+texture_hover = ExtResource( 14 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Plus" type="TextureButton" parent="Grid/Top/LeftColumn/PlayerCount/Buttons"]
+modulate = Color( 0.439216, 0.435294, 0.827451, 0.501961 )
+margin_left = 260.0
+margin_right = 520.0
+margin_bottom = 781.0
+focus_mode = 0
+size_flags_horizontal = 3
+enabled_focus_mode = 0
+texture_hover = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Content" type="VBoxContainer" parent="Grid/Top/LeftColumn/PlayerCount"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Control" parent="Grid/Top/LeftColumn/PlayerCount/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="Grid/Top/LeftColumn/PlayerCount/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Grid/Top/LeftColumn/PlayerCount/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Player Count"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="Grid/Top/LeftColumn/PlayerCount/Content/Header/ItemTitle/Title"]
+script = ExtResource( 18 )
+text_key = "menu.player_count"
+
+[node name="ItemContainer" type="CenterContainer" parent="Grid/Top/LeftColumn/PlayerCount/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 780.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Grid/Top/LeftColumn/PlayerCount/Content/ItemContainer"]
+margin_left = 202.0
+margin_top = 198.0
+margin_right = 318.0
+margin_bottom = 498.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 300 )
+custom_fonts/font = ExtResource( 10 )
+text = "0"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CenterColumn" type="VBoxContainer" parent="Grid/Top"]
+margin_left = 540.0
+margin_right = 1060.0
+margin_bottom = 780.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ambassador" type="TextureRect" parent="Grid/Top/CenterColumn"]
+margin_right = 520.0
+margin_bottom = 380.0
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="Grid/Top/CenterColumn/Ambassador"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="VBoxContainer" parent="Grid/Top/CenterColumn/Ambassador"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="Grid/Top/CenterColumn/Ambassador/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="Grid/Top/CenterColumn/Ambassador/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Grid/Top/CenterColumn/Ambassador/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Ambassador"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="Grid/Top/CenterColumn/Ambassador/Content/Header/ItemTitle/Title"]
+script = ExtResource( 18 )
+__meta__ = {
+"_editor_description_": ""
+}
+text_key = "character.ambassador"
+
+[node name="ImageContainer2" type="CenterContainer" parent="Grid/Top/CenterColumn/Ambassador/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureRect" parent="Grid/Top/CenterColumn/Ambassador/Content/ImageContainer2"]
+margin_left = 135.0
+margin_top = 23.0
+margin_right = 385.0
+margin_bottom = 273.0
+mouse_filter = 2
+texture = ExtResource( 8 )
+
+[node name="Inquisitor" type="TextureRect" parent="Grid/Top/CenterColumn"]
+margin_top = 400.0
+margin_right = 520.0
+margin_bottom = 780.0
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="Grid/Top/CenterColumn/Inquisitor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+toggle_mode = true
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="VBoxContainer" parent="Grid/Top/CenterColumn/Inquisitor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="Grid/Top/CenterColumn/Inquisitor/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="Grid/Top/CenterColumn/Inquisitor/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Grid/Top/CenterColumn/Inquisitor/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Inquisitor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="Grid/Top/CenterColumn/Inquisitor/Content/Header/ItemTitle/Title"]
+script = ExtResource( 18 )
+text_key = "character.inquisitor"
+
+[node name="ImageContainer2" type="CenterContainer" parent="Grid/Top/CenterColumn/Inquisitor/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureRect" parent="Grid/Top/CenterColumn/Inquisitor/Content/ImageContainer2"]
+margin_left = 135.0
+margin_top = 23.0
+margin_right = 385.0
+margin_bottom = 273.0
+mouse_filter = 2
+texture = ExtResource( 7 )
+
+[node name="Bottom" type="GridContainer" parent="Grid"]
+margin_top = 800.0
+margin_right = 1060.0
+margin_bottom = 1180.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="BotDifficulty" type="TextureRect" parent="Grid/Bottom"]
+margin_right = 520.0
+margin_bottom = 380.0
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="Grid/Bottom/BotDifficulty"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="VBoxContainer" parent="Grid/Bottom/BotDifficulty"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Header" type="Control" parent="Grid/Bottom/BotDifficulty/Content"]
+margin_right = 520.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 2
+
+[node name="ItemTitle" type="TextureRect" parent="Grid/Bottom/BotDifficulty/Content/Header"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_right = 520.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Grid/Bottom/BotDifficulty/Content/Header/ItemTitle"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -21.5
+margin_right = 216.0
+margin_bottom = 21.5
+custom_fonts/font = ExtResource( 5 )
+text = "Bot Difficulty"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="Grid/Bottom/BotDifficulty/Content/Header/ItemTitle/Title"]
+script = ExtResource( 18 )
+text_key = "menu.bot_difficulty"
+
+[node name="ItemContainer" type="CenterContainer" parent="Grid/Bottom/BotDifficulty/Content"]
+margin_top = 84.0
+margin_right = 520.0
+margin_bottom = 380.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Grid/Bottom/BotDifficulty/Content/ItemContainer"]
+margin_left = 160.0
+margin_top = 83.0
+margin_right = 360.0
+margin_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 130 )
+custom_colors/font_color = Color( 0.439216, 0.435294, 0.827451, 1 )
+text = "EASY"
+align = 1
+
+[node name="LocalizedText" type="Node" parent="Grid/Bottom/BotDifficulty/Content/ItemContainer/Label"]
+script = ExtResource( 18 )
+text_key = "menu.easy"
+
+[node name="Play" type="Control" parent="Grid/Bottom"]
+margin_left = 540.0
+margin_right = 1060.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 520, 380 )
+mouse_filter = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Button" type="Button" parent="Grid/Bottom/Play"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="Grid/Bottom/Play/Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.5
+margin_top = -80.0
+margin_right = 80.5
+margin_bottom = 80.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayText" type="Button" parent="Grid/Bottom/Play"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = -73.0
+rect_min_size = Vector2( 300, 0 )
+mouse_filter = 2
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = ExtResource( 1 )
+text = "Play"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocalizedText" type="Node" parent="Grid/Bottom/Play/PlayText"]
+script = ExtResource( 18 )
+text_key = "menu.play"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hide = ExtResource( 16 )
+anims/show = ExtResource( 17 )

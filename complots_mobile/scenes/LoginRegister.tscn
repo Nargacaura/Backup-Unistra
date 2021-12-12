@@ -1,0 +1,350 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://ui/themes/complots_mobile_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/view/LoginRegister.gd" type="Script" id=2]
+[ext_resource path="res://ui/themes/resources/green_button/green_btn_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://scripts/view/LocalizedText.gd" type="Script" id=4]
+[ext_resource path="res://ui/fonts/roboto_black_50.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/themes/resources/green_button/green_btn_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://ui/themes/resources/green_button/green_btn_hover.tres" type="StyleBox" id=7]
+[ext_resource path="res://ui/themes/resources/panel.tres" type="StyleBox" id=8]
+[ext_resource path="res://ui/themes/resources/button_normal.tres" type="StyleBox" id=9]
+[ext_resource path="res://ui/themes/resources/button_pressed.tres" type="StyleBox" id=10]
+[ext_resource path="res://ui/themes/resources/button_disabled.tres" type="StyleBox" id=11]
+[ext_resource path="res://ui/fonts/36/roboto_black_36.tres" type="DynamicFont" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[node name="LoginRegister" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+color = Color( 0, 0, 0, 0.501961 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+margin_left = 140.0
+margin_top = 360.0
+margin_right = 940.0
+margin_bottom = 1560.0
+rect_min_size = Vector2( 800, 1200 )
+custom_styles/panel = ExtResource( 8 )
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="HBoxContainer" parent="CenterContainer/Panel/Content"]
+margin_right = 800.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+custom_constants/separation = 0
+
+[node name="Login" type="Button" parent="CenterContainer/Panel/Content/Header"]
+margin_right = 400.0
+margin_bottom = 100.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/focus = ExtResource( 9 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 10 )
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 0
+text = "Login"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Header/Login"]
+script = ExtResource( 4 )
+text_key = "menu.login"
+
+[node name="Register" type="Button" parent="CenterContainer/Panel/Content/Header"]
+margin_left = 400.0
+margin_right = 800.0
+margin_bottom = 100.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/focus = ExtResource( 9 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 10 )
+toggle_mode = true
+enabled_focus_mode = 0
+text = "Register"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Header/Register"]
+script = ExtResource( 4 )
+text_key = "menu.register"
+
+[node name="Pages" type="MarginContainer" parent="CenterContainer/Panel/Content"]
+margin_top = 104.0
+margin_right = 800.0
+margin_bottom = 1200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 60
+custom_constants/margin_top = 60
+custom_constants/margin_left = 60
+custom_constants/margin_bottom = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginPage" type="VBoxContainer" parent="CenterContainer/Panel/Content/Pages"]
+margin_left = 60.0
+margin_top = 60.0
+margin_right = 740.0
+margin_bottom = 1036.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="Username" type="VBoxContainer" parent="CenterContainer/Panel/Content/Pages/LoginPage"]
+margin_top = 97.0
+margin_right = 680.0
+margin_bottom = 263.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/Content/Pages/LoginPage/Username"]
+margin_right = 680.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+text = "Username"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/LoginPage/Username/Label"]
+script = ExtResource( 4 )
+text_key = "menu.username"
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/Panel/Content/Pages/LoginPage/Username"]
+margin_top = 75.0
+margin_right = 680.0
+margin_bottom = 166.0
+theme = ExtResource( 1 )
+placeholder_text = "Username"
+placeholder_alpha = 0.2
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/LoginPage/Username/LineEdit"]
+script = ExtResource( 4 )
+text_key = "menu.username"
+
+[node name="Password" type="VBoxContainer" parent="CenterContainer/Panel/Content/Pages/LoginPage"]
+margin_top = 303.0
+margin_right = 680.0
+margin_bottom = 469.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/Content/Pages/LoginPage/Password"]
+margin_right = 680.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+text = "Password"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/LoginPage/Password/Label"]
+script = ExtResource( 4 )
+text_key = "menu.password"
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/Panel/Content/Pages/LoginPage/Password"]
+margin_top = 75.0
+margin_right = 680.0
+margin_bottom = 166.0
+theme = ExtResource( 1 )
+secret = true
+placeholder_text = "Password"
+placeholder_alpha = 0.2
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/LoginPage/Password/LineEdit"]
+script = ExtResource( 4 )
+text_key = "menu.password"
+
+[node name="Error" type="Label" parent="CenterContainer/Panel/Content/Pages/LoginPage"]
+margin_top = 509.0
+margin_right = 680.0
+margin_bottom = 634.0
+rect_min_size = Vector2( 0, 125 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.752941, 0.223529, 0.168627, 1 )
+autowrap = true
+
+[node name="Connect" type="CenterContainer" parent="CenterContainer/Panel/Content/Pages/LoginPage"]
+margin_top = 674.0
+margin_right = 680.0
+margin_bottom = 795.0
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/Content/Pages/LoginPage/Connect"]
+margin_left = 187.0
+margin_right = 493.0
+margin_bottom = 121.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+text = "Connect"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/LoginPage/Connect/Button"]
+script = ExtResource( 4 )
+text_key = "menu.connect"
+
+[node name="ContinueNoLogin" type="Button" parent="CenterContainer/Panel/Content/Pages/LoginPage"]
+margin_top = 835.0
+margin_right = 680.0
+margin_bottom = 878.0
+focus_mode = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = ExtResource( 12 )
+text = "Continue without login"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/LoginPage/ContinueNoLogin"]
+script = ExtResource( 4 )
+text_key = "menu.continue_without_login"
+
+[node name="RegisterPage" type="VBoxContainer" parent="CenterContainer/Panel/Content/Pages"]
+visible = false
+margin_left = 60.0
+margin_top = 60.0
+margin_right = 740.0
+margin_bottom = 1047.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="Username" type="VBoxContainer" parent="CenterContainer/Panel/Content/Pages/RegisterPage"]
+margin_right = 680.0
+margin_bottom = 166.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Username"]
+margin_right = 680.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+text = "Username"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Username/Label"]
+script = ExtResource( 4 )
+text_key = "menu.username"
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Username"]
+margin_top = 75.0
+margin_right = 680.0
+margin_bottom = 166.0
+placeholder_text = "Username"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Username/LineEdit"]
+script = ExtResource( 4 )
+text_key = "menu.username"
+
+[node name="Password" type="VBoxContainer" parent="CenterContainer/Panel/Content/Pages/RegisterPage"]
+margin_top = 206.0
+margin_right = 680.0
+margin_bottom = 372.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Password"]
+margin_right = 680.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+text = "Password"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Password/Label"]
+script = ExtResource( 4 )
+text_key = "menu.password"
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Password"]
+margin_top = 75.0
+margin_right = 680.0
+margin_bottom = 166.0
+secret = true
+placeholder_text = "Password"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Password/LineEdit"]
+script = ExtResource( 4 )
+text_key = "menu.password"
+
+[node name="Confirmation" type="VBoxContainer" parent="CenterContainer/Panel/Content/Pages/RegisterPage"]
+margin_top = 412.0
+margin_right = 680.0
+margin_bottom = 578.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Confirmation"]
+margin_right = 680.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+text = "Password Confirmation"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Confirmation/Label"]
+script = ExtResource( 4 )
+text_key = "menu.password_confirmation"
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Confirmation"]
+margin_top = 75.0
+margin_right = 680.0
+margin_bottom = 166.0
+secret = true
+placeholder_text = "Password"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Confirmation/LineEdit"]
+script = ExtResource( 4 )
+text_key = "menu.password"
+
+[node name="Error" type="Label" parent="CenterContainer/Panel/Content/Pages/RegisterPage"]
+margin_top = 618.0
+margin_right = 680.0
+margin_bottom = 743.0
+rect_min_size = Vector2( 0, 125 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.752941, 0.223529, 0.168627, 1 )
+autowrap = true
+
+[node name="Create" type="CenterContainer" parent="CenterContainer/Panel/Content/Pages/RegisterPage"]
+margin_top = 783.0
+margin_right = 680.0
+margin_bottom = 904.0
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Create"]
+margin_left = 209.0
+margin_right = 470.0
+margin_bottom = 121.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+text = "Create"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/RegisterPage/Create/Button"]
+script = ExtResource( 4 )
+text_key = "menu.form.create"
+
+[node name="ContinueNoLogin" type="Button" parent="CenterContainer/Panel/Content/Pages/RegisterPage"]
+margin_top = 944.0
+margin_right = 680.0
+margin_bottom = 987.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = ExtResource( 12 )
+text = "Continue without login"
+
+[node name="LocalizedText" type="Node" parent="CenterContainer/Panel/Content/Pages/RegisterPage/ContinueNoLogin"]
+script = ExtResource( 4 )
+text_key = "menu.continue_without_login"
