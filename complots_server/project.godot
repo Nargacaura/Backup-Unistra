@@ -1,0 +1,92 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Action",
+"language": "GDScript",
+"path": "res://scripts/Action.gd"
+}, {
+"base": "Reference",
+"class": "Board",
+"language": "GDScript",
+"path": "res://scripts/Board.gd"
+}, {
+"base": "Player_Base",
+"class": "Bot",
+"language": "GDScript",
+"path": "res://scripts/Bot.gd"
+}, {
+"base": "Reference",
+"class": "Card",
+"language": "GDScript",
+"path": "res://scripts/Card.gd"
+}, {
+"base": "Player_Base",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/Player.gd"
+}, {
+"base": "Reference",
+"class": "Player_Base",
+"language": "GDScript",
+"path": "res://scripts/Player_Base.gd"
+}, {
+"base": "Board",
+"class": "Remote_Board",
+"language": "GDScript",
+"path": "res://scripts/Remote_Board.gd"
+}, {
+"base": "Node",
+"class": "Remote_player",
+"language": "GDScript",
+"path": "res://scripts/Remote_player.gd"
+}, {
+"base": "Node",
+"class": "Serializer",
+"language": "GDScript",
+"path": "res://scripts/Serializer.gd"
+} ]
+_global_script_class_icons={
+"Action": "",
+"Board": "",
+"Bot": "",
+"Card": "",
+"Player": "",
+"Player_Base": "",
+"Remote_Board": "",
+"Remote_player": "",
+"Serializer": ""
+}
+
+[application]
+
+config/name="complots_server"
+run/main_scene="res://scenes/main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Network="*res://scripts/Network.gd"
+Database="*res://scripts/Database.gd"
+
+[display]
+
+window/size/width=200
+window/size/height=200
+
+[editor_plugins]
+
+enabled=PoolStringArray( "godot-sqlite" )
+
+[rendering]
+
+quality/driver/fallback_to_gles2=true
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="Card_Select_Container" type="VBoxContainer"]
+margin_left = -1.0
+margin_top = 3.0
+margin_right = 221.0
+margin_bottom = 228.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 222.0
+margin_bottom = 14.0
+text = "Select a card"
+
+[node name="Cards" type="VBoxContainer" parent="."]
+margin_top = 18.0
+margin_right = 222.0
+margin_bottom = 18.0
+
+[node name="Select_Confirm" type="Button" parent="."]
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 42.0
+text = "Confirm"

@@ -1,0 +1,20 @@
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=false
+
+[entry]
+
+OSX.64="res://addons/godot-sqlite/bin/osx/libgdsqlite.dylib"
+Windows.64="res://addons/godot-sqlite/bin/win64/libgdsqlite.dll"
+X11.64="res://addons/godot-sqlite/bin/x11/libgdsqlite.so"
+Server="res://addons/godot-sqlite/bin/server/libgdsqlite.so"
+
+[dependencies]
+
+OSX.64=[  ]
+Windows.64=[  ]
+X11.64=[  ]
+Server=[  ]

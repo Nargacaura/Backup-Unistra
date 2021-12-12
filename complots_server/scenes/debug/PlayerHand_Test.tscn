@@ -1,0 +1,71 @@
+[gd_scene format=2]
+
+[node name="PlayerHand" type="HBoxContainer"]
+anchor_right = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Respond_Actions" type="VBoxContainer" parent="."]
+margin_left = 36.0
+margin_right = 36.0
+margin_bottom = 120.0
+
+[node name="Player_Badge" type="ColorRect" parent="."]
+margin_left = 40.0
+margin_right = 160.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+color = Color( 0.780392, 0.305882, 0.305882, 1 )
+
+[node name="Info" type="VBoxContainer" parent="Player_Badge"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Label" parent="Player_Badge/Info"]
+margin_top = 11.0
+margin_right = 120.0
+margin_bottom = 25.0
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="Label" parent="Player_Badge/Info"]
+margin_top = 52.0
+margin_right = 120.0
+margin_bottom = 66.0
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Player Name"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="Player_Badge/Info"]
+margin_top = 94.0
+margin_right = 120.0
+margin_bottom = 108.0
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Coins : 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cards" type="HBoxContainer" parent="."]
+margin_left = 164.0
+margin_right = 164.0
+margin_bottom = 120.0
