@@ -1,2 +1,2 @@
-# Backup-Unistra
-Backup des autres projets de Gitlab dont j'ai pu collaborer avec, mais dont l'import est impossible.
+# TimeBomb
+Backup du [projet d'IHM (L2) réalisé en quatuor](https://gitlab.unistra.fr/duranndiaye/ihm-s5).
