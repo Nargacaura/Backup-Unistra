@@ -1,0 +1,99 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Action",
+"language": "GDScript",
+"path": "res://scripts/core/Action.gd"
+}, {
+"base": "Reference",
+"class": "Board",
+"language": "GDScript",
+"path": "res://scripts/core/Board.gd"
+}, {
+"base": "Player_Base",
+"class": "Bot",
+"language": "GDScript",
+"path": "res://scripts/core/Bot.gd"
+}, {
+"base": "Reference",
+"class": "Card",
+"language": "GDScript",
+"path": "res://scripts/core/Card.gd"
+}, {
+"base": "Node",
+"class": "LocalizedText",
+"language": "GDScript",
+"path": "res://scripts/view/LocalizedText.gd"
+}, {
+"base": "Player_Base",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/core/Player.gd"
+}, {
+"base": "Reference",
+"class": "Player_Base",
+"language": "GDScript",
+"path": "res://scripts/core/Player_Base.gd"
+}, {
+"base": "Board",
+"class": "Remote_Board",
+"language": "GDScript",
+"path": "res://scripts/core/Remote_Board.gd"
+}, {
+"base": "Node",
+"class": "Serializer",
+"language": "GDScript",
+"path": "res://scripts/network/Serializer.gd"
+} ]
+_global_script_class_icons={
+"Action": "",
+"Board": "",
+"Bot": "",
+"Card": "",
+"LocalizedText": "",
+"Player": "",
+"Player_Base": "",
+"Remote_Board": "",
+"Serializer": ""
+}
+
+[application]
+
+config/name="Complots"
+run/main_scene="res://scenes/MainMenu.tscn"
+boot_splash/image="res://ui/assets/app/Splash_Screen.png"
+boot_splash/bg_color=Color( 0.968627, 0.945098, 0.890196, 1 )
+config/icon="res://ui/assets/app/Logo.png"
+
+[autoload]
+
+AppManager="*res://scripts/AppManager.gd"
+resource_queue="*res://scripts/misc/resource_queue.gd"
+LoadingScreen="*res://scenes/LoadingScreen.tscn"
+Loader="*res://scripts/Loader.gd"
+AudioManager="*res://scenes/AudioManager.tscn"
+Network="*res://scripts/network/Network.gd"
+Localization="*res://scripts/Localization.gd"
+
+[display]
+
+window/size/width=1080
+window/size/height=1920
+window/size/test_width=540
+window/size/test_height=960
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
