@@ -1,0 +1,48 @@
+/**
+ *	Light mode
+ */
+:root {
+  --background-body-color: #fff9e8;
+  --navbar-background-color: #bda67e;
+  --content-background-color: #322222;
+}
+
+/* @import url('./theme_light.css')
+@import url('./theme_dark.css')
+ */
+body,
+.rst-content table.docutils thead {
+  background-color: var(--background-body-color);
+}
+
+.wy-side-nav-search {
+  background-color: var(--navbar-background-color);
+}
+
+.wy-side-nav-search.fixed {
+  position: fixed;
+}
+
+.wy-nav-content {
+  background-color: var(--content-background-color);
+}
+
+.wy-nav-side {
+  background-color: var(--navbar-background-color);
+}
+
+.logo {
+  border-radius: 10px;
+}
+
+h2:after {
+  content: ' ';
+  display: block;
+  border: 2px solid #d0d0d0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}

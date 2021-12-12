@@ -1,0 +1,7 @@
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-body-color: #fff9e8;
+		--navbar-background-color: #bda67e;
+		--content-background-color: #322222;
+	}
+}
