@@ -1,6 +1,0 @@
-**Utilisateur** (<ins>idUtilisateur</ins>, nom, prenom, adresse, email, password, derniere_activite, bool_actif, enregistre_le)  
-**Interagit avec** (<ins>_idUtilisateur_</ins>, <ins>_idAgenda_</ins>, note, date_evaluation, peut_modifier, createur)  
-**Agenda** (<ins>idAgenda</ins>, nomAgenda, priorite, maj, superposabilite, archive, nombre_activites)  
-**Est inscrit dans** (<ins>_idUtilisateur_</ins>, <ins>_idActivite_</ins>)  
-**Activite** (<ins>idActivite</ins>, titre, descriptif, lieu, pause, priorite, archive, type, nombre_occurences, debut, fin, periodicite)  
-**Inclut** (<ins>_idAgenda_</ins>, <ins>_idActivite_</ins>)
