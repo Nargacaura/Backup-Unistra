@@ -1,0 +1,17 @@
+image: python
+
+pages:
+  before_script:
+    - pip3 install sphinx_rtd_theme
+    - pip3 install docstring_parser
+    - mkdir -p public
+  script:
+    - cd docs/
+    - make html
+
+  artifacts:
+    paths:
+      - public
+
+  only:
+    - master
