@@ -1,0 +1,250 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scripts/interface/HUD_script.gd" type="Script" id=1]
+[ext_resource path="res://resources/Icons/icon_tresor.png" type="Texture" id=2]
+[ext_resource path="res://resources/Icons/icon_tresor_disabled.png" type="Texture" id=3]
+[ext_resource path="res://resources/Icons/icon_aide_etrangere.png" type="Texture" id=4]
+[ext_resource path="res://resources/Icons/icon_aide_etrangere_disabled.png" type="Texture" id=5]
+[ext_resource path="res://resources/Icons/icon_assassinat.png" type="Texture" id=6]
+[ext_resource path="res://resources/Icons/icon_assassinat_disabled.png" type="Texture" id=7]
+[ext_resource path="res://resources/Fonts/Washington Text Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://resources/Fonts/Washington Text Alternates.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://resources/Icons/mask_small_icon.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 41
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 8 )
+
+[node name="HUD" type="HBoxContainer"]
+margin_right = 787.0
+margin_bottom = 92.0
+rect_scale = Vector2( 0.67, 0.715 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="actions_grid" type="GridContainer" parent="."]
+margin_right = 197.0
+margin_bottom = 140.0
+columns = 3
+
+[node name="enrich_button" type="TextureButton" parent="actions_grid"]
+margin_right = 44.0
+margin_bottom = 77.0
+texture_normal = ExtResource( 2 )
+texture_disabled = ExtResource( 3 )
+
+[node name="stranger_button" type="TextureButton" parent="actions_grid"]
+margin_left = 48.0
+margin_right = 123.0
+margin_bottom = 77.0
+texture_normal = ExtResource( 4 )
+texture_disabled = ExtResource( 5 )
+
+[node name="assassinate_button" type="TextureButton" parent="actions_grid"]
+margin_left = 127.0
+margin_right = 197.0
+margin_bottom = 77.0
+disabled = true
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 7 )
+
+[node name="no_use_label" type="Label" parent="actions_grid"]
+margin_top = 98.0
+margin_right = 44.0
+margin_bottom = 112.0
+
+[node name="coins_acquired" type="Label" parent="actions_grid"]
+margin_left = 48.0
+margin_top = 92.0
+margin_right = 123.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
+text = "Coins:"
+valign = 1
+autowrap = true
+
+[node name="gold_counter" type="Label" parent="actions_grid"]
+margin_left = 127.0
+margin_top = 81.0
+margin_right = 197.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 201.0
+margin_right = 205.0
+margin_bottom = 140.0
+
+[node name="Abilities" type="VBoxContainer" parent="."]
+margin_left = 209.0
+margin_right = 685.0
+margin_bottom = 140.0
+
+[node name="abilities_container" type="HBoxContainer" parent="Abilities"]
+margin_right = 476.0
+margin_bottom = 87.0
+
+[node name="role_1_button" type="TextureButton" parent="Abilities/abilities_container"]
+margin_right = 92.0
+margin_bottom = 87.0
+texture_normal = ExtResource( 10 )
+
+[node name="role_2_button" type="TextureButton" parent="Abilities/abilities_container"]
+margin_left = 96.0
+margin_right = 188.0
+margin_bottom = 87.0
+texture_normal = ExtResource( 10 )
+
+[node name="role_3_button" type="TextureButton" parent="Abilities/abilities_container"]
+margin_left = 192.0
+margin_right = 284.0
+margin_bottom = 87.0
+texture_normal = ExtResource( 10 )
+
+[node name="role_4_button" type="TextureButton" parent="Abilities/abilities_container"]
+margin_left = 288.0
+margin_right = 380.0
+margin_bottom = 87.0
+texture_normal = ExtResource( 10 )
+
+[node name="role_5_button" type="TextureButton" parent="Abilities/abilities_container"]
+margin_left = 384.0
+margin_right = 476.0
+margin_bottom = 87.0
+texture_normal = ExtResource( 10 )
+
+[node name="Inquisitor_buttons" type="HBoxContainer" parent="Abilities"]
+visible = false
+margin_top = 91.0
+margin_right = 476.0
+margin_bottom = 135.0
+alignment = 2
+
+[node name="add_cards_button" type="Button" parent="Abilities/Inquisitor_buttons"]
+margin_left = 73.0
+margin_right = 245.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 3 )
+text = "Exchange a card"
+flat = true
+
+[node name="no_use_label" type="Label" parent="Abilities/Inquisitor_buttons"]
+margin_left = 249.0
+margin_top = 15.0
+margin_right = 299.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="view_card_button" type="Button" parent="Abilities/Inquisitor_buttons"]
+margin_left = 303.0
+margin_right = 476.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 4 )
+text = "View an oponent's card"
+flat = true
+
+[node name="Inquisitor_options" type="HBoxContainer" parent="Abilities"]
+visible = false
+margin_top = 91.0
+margin_right = 476.0
+margin_bottom = 135.0
+alignment = 2
+
+[node name="keep_button" type="Button" parent="Abilities/Inquisitor_options"]
+margin_left = 74.0
+margin_right = 230.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 5 )
+text = "Tell them to keep that card"
+flat = true
+
+[node name="no_use_label" type="Label" parent="Abilities/Inquisitor_options"]
+margin_left = 234.0
+margin_top = 15.0
+margin_right = 284.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="replace_button" type="Button" parent="Abilities/Inquisitor_options"]
+margin_left = 288.0
+margin_right = 476.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 6 )
+text = "Tell them to exchange that card"
+flat = true
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+margin_left = 689.0
+margin_right = 693.0
+margin_bottom = 140.0
+
+[node name="counter_container" type="VBoxContainer" parent="."]
+margin_left = 697.0
+margin_right = 960.0
+margin_bottom = 140.0
+
+[node name="counter_button" type="Button" parent="counter_container"]
+margin_right = 263.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 7 )
+disabled = true
+text = "Counter that action"
+flat = true
+
+[node name="doubt_button" type="Button" parent="counter_container"]
+margin_top = 48.0
+margin_right = 263.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 8 )
+disabled = true
+text = "Doubt the opponent"
+flat = true
+
+[node name="pass_button" type="Button" parent="counter_container"]
+margin_top = 96.0
+margin_right = 263.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 9 )
+disabled = true
+text = "Pass"
+flat = true
+[connection signal="pressed" from="counter_container/counter_button" to="." method="_on_counter_button_pressed"]
+[connection signal="pressed" from="counter_container/doubt_button" to="." method="_on_doubt_button_pressed"]
+[connection signal="pressed" from="counter_container/pass_button" to="." method="_on_pass_button_pressed"]

@@ -1,0 +1,622 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://scripts/interface/menu.gd" type="Script" id=1]
+[ext_resource path="res://resources/background-2359804_1280.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/Infos.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/Title/Bannière-complots.png" type="Texture" id=4]
+[ext_resource path="res://resources/Fonts/Washington Text Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://resources/Fonts/Washington Text Alternates.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://resources/Fonts/SF-Mono-Regular.otf" type="DynamicFontData" id=7]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 46
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 46
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 60
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 60
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 46
+outline_color = Color( 0.498039, 0.47451, 0.47451, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=27]
+size = 64
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="MainMenu" type="Control"]
+margin_right = 1917.0
+margin_bottom = 1086.0
+rect_scale = Vector2( 0.67, 0.715 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 1080.0
+margin_bottom = 760.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Infos" parent="." instance=ExtResource( 3 )]
+margin_top = 1089.0
+margin_right = 888.0
+margin_bottom = 1089.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 1924.0
+margin_bottom = 1088.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="GridContainer"]
+margin_right = 888.0
+margin_bottom = 65.0
+text = "
+                                                                                                                                                                                                                              
+
+"
+
+[node name="Label3" type="Label" parent="GridContainer"]
+margin_left = 892.0
+margin_top = 25.0
+margin_right = 1907.0
+margin_bottom = 39.0
+
+[node name="logo" type="TextureRect" parent="GridContainer"]
+margin_top = 69.0
+margin_right = 888.0
+margin_bottom = 244.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="GridContainer"]
+margin_left = 892.0
+margin_top = 149.0
+margin_right = 1907.0
+margin_bottom = 163.0
+text = "                                                                                                                                                                 "
+
+[node name="Label2" type="Label" parent="GridContainer"]
+margin_top = 531.0
+margin_right = 888.0
+margin_bottom = 545.0
+
+[node name="TabContainer" type="TabContainer" parent="GridContainer"]
+margin_left = 892.0
+margin_top = 248.0
+margin_right = 1907.0
+margin_bottom = 828.0
+rect_min_size = Vector2( 1000, 580 )
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+tab_align = 0
+
+[node name="Login" type="VBoxContainer" parent="GridContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 75.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="login_register" type="HBoxContainer" parent="GridContainer/TabContainer/Login"]
+margin_right = 1007.0
+margin_bottom = 359.0
+rect_min_size = Vector2( 0, 310 )
+
+[node name="login_box" type="VBoxContainer" parent="GridContainer/TabContainer/Login/login_register"]
+margin_right = 500.0
+margin_bottom = 359.0
+rect_min_size = Vector2( 500, 0 )
+
+[node name="login_label" type="Label" parent="GridContainer/TabContainer/Login/login_register/login_box"]
+margin_right = 500.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 3 )
+text = " Login"
+
+[node name="login_grid" type="GridContainer" parent="GridContainer/TabContainer/Login/login_register/login_box"]
+margin_top = 59.0
+margin_right = 500.0
+margin_bottom = 359.0
+rect_min_size = Vector2( 0, 300 )
+columns = 2
+
+[node name="id_label" type="Label" parent="GridContainer/TabContainer/Login/login_register/login_box/login_grid"]
+margin_top = 5.0
+margin_right = 124.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 4 )
+text = "Id"
+
+[node name="id_input" type="LineEdit" parent="GridContainer/TabContainer/Login/login_register/login_box/login_grid"]
+margin_left = 128.0
+margin_right = 428.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 5 )
+
+[node name="pwd_label" type="Label" parent="GridContainer/TabContainer/Login/login_register/login_box/login_grid"]
+margin_top = 57.0
+margin_right = 124.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 6 )
+text = "Password"
+
+[node name="pwd_input" type="LineEdit" parent="GridContainer/TabContainer/Login/login_register/login_box/login_grid"]
+margin_left = 128.0
+margin_top = 52.0
+margin_right = 428.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 7 )
+secret = true
+
+[node name="register_box" type="VBoxContainer" parent="GridContainer/TabContainer/Login/login_register"]
+margin_left = 504.0
+margin_right = 1007.0
+margin_bottom = 359.0
+rect_min_size = Vector2( 500, 0 )
+
+[node name="register_label" type="Label" parent="GridContainer/TabContainer/Login/login_register/register_box"]
+margin_right = 503.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 8 )
+text = " Register"
+
+[node name="register_grid" type="GridContainer" parent="GridContainer/TabContainer/Login/login_register/register_box"]
+margin_top = 59.0
+margin_right = 503.0
+margin_bottom = 359.0
+rect_min_size = Vector2( 0, 300 )
+columns = 2
+
+[node name="username_label" type="Label" parent="GridContainer/TabContainer/Login/login_register/register_box/register_grid"]
+margin_top = 5.0
+margin_right = 199.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 9 )
+text = "Username"
+
+[node name="username_input" type="LineEdit" parent="GridContainer/TabContainer/Login/login_register/register_box/register_grid"]
+margin_left = 203.0
+margin_right = 503.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 10 )
+
+[node name="id_label" type="Label" parent="GridContainer/TabContainer/Login/login_register/register_box/register_grid"]
+margin_top = 57.0
+margin_right = 199.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 11 )
+text = "Id"
+
+[node name="id_input" type="LineEdit" parent="GridContainer/TabContainer/Login/login_register/register_box/register_grid"]
+margin_left = 203.0
+margin_top = 52.0
+margin_right = 503.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 12 )
+
+[node name="pwd_label" type="Label" parent="GridContainer/TabContainer/Login/login_register/register_box/register_grid"]
+margin_top = 109.0
+margin_right = 199.0
+margin_bottom = 147.0
+custom_fonts/font = SubResource( 13 )
+text = "Password"
+
+[node name="pwd_input" type="LineEdit" parent="GridContainer/TabContainer/Login/login_register/register_box/register_grid"]
+margin_left = 203.0
+margin_top = 104.0
+margin_right = 503.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 14 )
+secret = true
+
+[node name="verif_label" type="Label" parent="GridContainer/TabContainer/Login/login_register/register_box/register_grid"]
+margin_top = 161.0
+margin_right = 199.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 15 )
+text = "Pw. verification"
+
+[node name="verif_input" type="LineEdit" parent="GridContainer/TabContainer/Login/login_register/register_box/register_grid"]
+margin_left = 203.0
+margin_top = 156.0
+margin_right = 503.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 16 )
+secret = true
+
+[node name="Buttons" type="HBoxContainer" parent="GridContainer/TabContainer/Login"]
+margin_top = 363.0
+margin_right = 1007.0
+margin_bottom = 440.0
+alignment = 1
+
+[node name="box_aligner" type="HBoxContainer" parent="GridContainer/TabContainer/Login/Buttons"]
+margin_right = 501.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="login_button" type="Button" parent="GridContainer/TabContainer/Login/Buttons/box_aligner"]
+margin_left = 100.0
+margin_right = 400.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 17 )
+text = "Login"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="box_aligner_2" type="HBoxContainer" parent="GridContainer/TabContainer/Login/Buttons"]
+margin_left = 505.0
+margin_right = 1007.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="register_button" type="Button" parent="GridContainer/TabContainer/Login/Buttons/box_aligner_2"]
+margin_left = 101.0
+margin_right = 401.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 18 )
+text = "Register"
+
+[node name="log_info" type="Label" parent="GridContainer/TabContainer/Login"]
+margin_top = 444.0
+margin_right = 1007.0
+margin_bottom = 499.0
+custom_fonts/font = SubResource( 19 )
+
+[node name="Join" type="VBoxContainer" parent="GridContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 75.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="join_grid" type="GridContainer" parent="GridContainer/TabContainer/Join"]
+margin_right = 1007.0
+margin_bottom = 48.0
+columns = 3
+
+[node name="server_name" type="Label" parent="GridContainer/TabContainer/Join/join_grid"]
+margin_right = 184.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 20 )
+text = "Server ID"
+
+[node name="server_name_input" type="LineEdit" parent="GridContainer/TabContainer/Join/join_grid"]
+margin_left = 188.0
+margin_right = 688.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 500, 0 )
+custom_fonts/font = SubResource( 21 )
+max_length = 32
+clear_button_enabled = true
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="join_button" type="Button" parent="GridContainer/TabContainer/Join/join_grid"]
+margin_left = 692.0
+margin_right = 991.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 21 )
+text = "Connect to this server"
+
+[node name="refresh" type="Button" parent="GridContainer/TabContainer/Join"]
+margin_top = 52.0
+margin_right = 1007.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 22 )
+text = "Refresh"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="list_container" type="Control" parent="GridContainer/TabContainer/Join"]
+margin_top = 109.0
+margin_right = 1007.0
+margin_bottom = 109.0
+
+[node name="Create" type="VBoxContainer" parent="GridContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 75.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="create_grid" type="GridContainer" parent="GridContainer/TabContainer/Create"]
+margin_right = 1007.0
+margin_bottom = 90.0
+columns = 2
+
+[node name="server_name" type="Label" parent="GridContainer/TabContainer/Create/create_grid"]
+margin_right = 205.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 23 )
+text = "Server name"
+
+[node name="server_name_input" type="LineEdit" parent="GridContainer/TabContainer/Create/create_grid"]
+margin_left = 209.0
+margin_right = 989.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 780, 0 )
+custom_fonts/font = SubResource( 24 )
+max_length = 32
+clear_button_enabled = true
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="choice" type="Label" parent="GridContainer/TabContainer/Create/create_grid"]
+margin_top = 52.0
+margin_right = 205.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 25 )
+text = "Remaining role"
+autowrap = true
+
+[node name="choice_option" type="ItemList" parent="GridContainer/TabContainer/Create/create_grid"]
+margin_left = 209.0
+margin_top = 52.0
+margin_right = 989.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 26 )
+auto_height = true
+
+[node name="create_button" type="Button" parent="GridContainer/TabContainer/Create"]
+margin_top = 94.0
+margin_right = 1007.0
+margin_bottom = 176.0
+custom_fonts/font = SubResource( 27 )
+disabled = true
+text = "Create the server"
+
+[node name="Settings" type="VBoxContainer" parent="GridContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 75.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="settings_grid" type="GridContainer" parent="GridContainer/TabContainer/Settings"]
+margin_right = 992.0
+margin_bottom = 100.0
+columns = 2
+
+[node name="language_label" type="Label" parent="GridContainer/TabContainer/Settings/settings_grid"]
+margin_right = 153.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 23 )
+text = "Language"
+
+[node name="change_language" type="ItemList" parent="GridContainer/TabContainer/Settings/settings_grid"]
+margin_left = 157.0
+margin_right = 991.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 834, 0 )
+custom_fonts/font = SubResource( 28 )
+auto_height = true
+max_columns = 6
+same_column_width = true
+
+[node name="sound_volume" type="Label" parent="GridContainer/TabContainer/Settings/settings_grid"]
+margin_top = 52.0
+margin_right = 153.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 23 )
+text = "Sound"
+
+[node name="volume" type="HBoxContainer" parent="GridContainer/TabContainer/Settings/settings_grid"]
+margin_left = 157.0
+margin_top = 51.0
+margin_right = 991.0
+margin_bottom = 100.0
+
+[node name="change_volume" type="HSlider" parent="GridContainer/TabContainer/Settings/settings_grid/volume"]
+margin_right = 500.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 500, 30 )
+ticks_on_borders = true
+
+[node name="sound_value" type="LineEdit" parent="GridContainer/TabContainer/Settings/settings_grid/volume"]
+margin_left = 504.0
+margin_right = 754.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = SubResource( 29 )
+max_length = 3
+expand_to_text_length = true
+context_menu_enabled = false
+
+[node name="reset_button" type="Button" parent="GridContainer/TabContainer/Settings"]
+margin_top = 104.0
+margin_right = 992.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 27 )
+text = "Revert settings to default ones"
+
+[node name="Label6" type="Label" parent="GridContainer"]
+margin_top = 832.0
+margin_right = 888.0
+margin_bottom = 999.0
+text = "                                                                         
+																		
+																		
+																		
+																		
+																		
+																		
+																		
+																		
+																		                                                                                        "
+
+[node name="Label5" type="Label" parent="GridContainer"]
+margin_left = 892.0
+margin_top = 908.0
+margin_right = 1907.0
+margin_bottom = 922.0
+
+[node name="quit_button" type="Button" parent="GridContainer"]
+margin_top = 1003.0
+margin_right = 888.0
+margin_bottom = 1085.0
+custom_fonts/font = SubResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Quit the game"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about_button" type="Button" parent="GridContainer"]
+margin_left = 892.0
+margin_top = 1003.0
+margin_right = 1907.0
+margin_bottom = 1085.0
+custom_fonts/font = SubResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Informations and rules of the game"
+flat = true
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GridContainer/TabContainer/Login/Buttons/box_aligner/login_button" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="GridContainer/TabContainer/Login/Buttons/box_aligner_2/register_button" to="." method="_on_register_button_pressed"]
+[connection signal="pressed" from="GridContainer/TabContainer/Join/join_grid/join_button" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="GridContainer/TabContainer/Join/refresh" to="." method="_on_Button_pressed"]
+[connection signal="item_selected" from="GridContainer/TabContainer/Create/create_grid/choice_option" to="." method="_on_choice_option_item_selected"]
+[connection signal="pressed" from="GridContainer/TabContainer/Create/create_button" to="." method="_on_create_button_pressed"]
+[connection signal="value_changed" from="GridContainer/TabContainer/Settings/settings_grid/volume/change_volume" to="." method="_on_change_volume_value_changed"]
+[connection signal="text_changed" from="GridContainer/TabContainer/Settings/settings_grid/volume/sound_value" to="." method="_on_sound_value_text_changed"]
+[connection signal="text_entered" from="GridContainer/TabContainer/Settings/settings_grid/volume/sound_value" to="." method="_on_sound_value_text_entered"]
+[connection signal="pressed" from="GridContainer/TabContainer/Settings/reset_button" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="GridContainer/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GridContainer/about_button" to="." method="_on_about_button_pressed"]

@@ -1,0 +1,217 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://resources/Fonts/Washington Text Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/Fonts/Washington Text Alternates.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/Chat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/background-2359804_1280.jpg" type="Texture" id=4]
+[ext_resource path="res://scripts/interface/lobby.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="Lobby" type="Control"]
+margin_right = 1910.0
+margin_bottom = 1073.0
+rect_scale = Vector2( 0.67, 0.715 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 1080.0
+margin_bottom = 765.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lobby" type="VBoxContainer" parent="."]
+margin_right = 1912.0
+margin_bottom = 1077.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="server_name" type="Label" parent="lobby"]
+margin_right = 1912.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Server"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lobby_grid" type="GridContainer" parent="lobby"]
+margin_top = 155.0
+margin_right = 1912.0
+margin_bottom = 1043.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player_list" type="VBoxContainer" parent="lobby/lobby_grid"]
+margin_right = 703.0
+margin_bottom = 766.0
+
+[node name="players" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_right = 703.0
+margin_bottom = 118.0
+custom_fonts/font = SubResource( 2 )
+text = "Player list"
+
+[node name="HSeparator" type="HSeparator" parent="lobby/lobby_grid/player_list"]
+margin_top = 122.0
+margin_right = 703.0
+margin_bottom = 126.0
+
+[node name="host" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_top = 130.0
+margin_right = 703.0
+margin_bottom = 206.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.14902, 0.823529, 0.129412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Host"
+
+[node name="invited_1" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_top = 210.0
+margin_right = 703.0
+margin_bottom = 286.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.121569, 0.509804, 0.811765, 1 )
+text = "Waiting..."
+
+[node name="invited_2" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_top = 290.0
+margin_right = 703.0
+margin_bottom = 366.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.443137, 0.121569, 0.811765, 1 )
+text = "Waiting..."
+
+[node name="invited_3" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_top = 370.0
+margin_right = 703.0
+margin_bottom = 446.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.811765, 0.121569, 0.235294, 1 )
+text = "Waiting..."
+
+[node name="invited_4" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_top = 450.0
+margin_right = 703.0
+margin_bottom = 526.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.811765, 0.211765, 0.121569, 1 )
+text = "Waiting..."
+
+[node name="invited_5" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_top = 530.0
+margin_right = 703.0
+margin_bottom = 606.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.811765, 0.533333, 0.121569, 1 )
+text = "Waiting..."
+
+[node name="invited_6" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_top = 610.0
+margin_right = 703.0
+margin_bottom = 686.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.309804, 0.309804, 0.305882, 1 )
+text = "Waiting..."
+
+[node name="invited_7" type="Label" parent="lobby/lobby_grid/player_list"]
+margin_top = 690.0
+margin_right = 703.0
+margin_bottom = 766.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Waiting..."
+
+[node name="label3" type="Label" parent="lobby/lobby_grid"]
+margin_left = 707.0
+margin_top = 376.0
+margin_right = 707.0
+margin_bottom = 390.0
+
+[node name="Chatbox" parent="lobby/lobby_grid" instance=ExtResource( 3 )]
+margin_left = 711.0
+margin_right = 1912.0
+margin_bottom = 766.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="label4" type="Label" parent="lobby/lobby_grid"]
+margin_top = 770.0
+margin_right = 703.0
+margin_bottom = 784.0
+
+[node name="label5" type="Label" parent="lobby/lobby_grid"]
+margin_left = 707.0
+margin_top = 770.0
+margin_right = 707.0
+margin_bottom = 784.0
+
+[node name="label7" type="Label" parent="lobby/lobby_grid"]
+margin_left = 711.0
+margin_top = 770.0
+margin_right = 1912.0
+margin_bottom = 784.0
+
+[node name="disconnect_button" type="Button" parent="lobby/lobby_grid"]
+margin_top = 788.0
+margin_right = 703.0
+margin_bottom = 870.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Disconnect from the server"
+flat = true
+
+[node name="Role_list" type="HBoxContainer" parent="lobby/lobby_grid"]
+margin_left = 707.0
+margin_top = 788.0
+margin_right = 707.0
+margin_bottom = 870.0
+alignment = 2
+
+[node name="play_button" type="Button" parent="lobby/lobby_grid"]
+margin_left = 711.0
+margin_top = 788.0
+margin_right = 1912.0
+margin_bottom = 870.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Start the game"
+flat = true
+
+[node name="label6" type="Label" parent="lobby/lobby_grid"]
+margin_top = 874.0
+margin_right = 703.0
+margin_bottom = 888.0
+text = "                                                                                                                         "
+[connection signal="pressed" from="lobby/lobby_grid/disconnect_button" to="." method="_on_disconnect_button_pressed"]
+[connection signal="pressed" from="lobby/lobby_grid/play_button" to="." method="_on_play_button_pressed"]

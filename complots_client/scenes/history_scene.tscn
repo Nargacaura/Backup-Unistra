@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://resources/Fonts/Ubuntu-M.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/Banners/mask_banner.png" type="Texture" id=2]
+[ext_resource path="res://resources/Fonts/Washington Text Alternates.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://resources/Fonts/Washington Text Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://resources/Icons/mask_small_icon.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 4 )
+fallback/0 = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="History" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.67, 0.715 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="counterer_grid" type="GridContainer" parent="."]
+margin_right = 346.0
+margin_bottom = 237.0
+columns = 2
+
+[node name="counterer" type="Label" parent="counterer_grid"]
+margin_top = 54.0
+margin_right = 250.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 250, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "Player"
+align = 2
+
+[node name="counterer_banner" type="TextureRect" parent="counterer_grid"]
+margin_left = 254.0
+margin_right = 346.0
+margin_bottom = 146.0
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="counterer_grid"]
+margin_top = 186.0
+margin_right = 250.0
+margin_bottom = 200.0
+
+[node name="counterer_role" type="TextureRect" parent="counterer_grid"]
+margin_left = 254.0
+margin_top = 150.0
+margin_right = 346.0
+margin_bottom = 237.0
+rect_min_size = Vector2( 70, 0 )
+texture = ExtResource( 5 )
+
+[node name="counters" type="Label" parent="."]
+margin_left = 350.0
+margin_top = 104.0
+margin_right = 430.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 2 )
+text = "counters"
+
+[node name="actor_grid" type="GridContainer" parent="."]
+margin_left = 434.0
+margin_right = 780.0
+margin_bottom = 237.0
+columns = 2
+
+[node name="actor_banner" type="TextureRect" parent="actor_grid"]
+margin_right = 92.0
+margin_bottom = 146.0
+texture = ExtResource( 2 )
+
+[node name="actor" type="Label" parent="actor_grid"]
+margin_left = 96.0
+margin_top = 54.0
+margin_right = 346.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 250, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "Player"
+
+[node name="actor_role" type="TextureRect" parent="actor_grid"]
+margin_top = 150.0
+margin_right = 92.0
+margin_bottom = 237.0
+rect_min_size = Vector2( 70, 0 )
+texture = ExtResource( 5 )

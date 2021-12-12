@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/Fonts/Washington Text Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/interface/server_lst_unit_script.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="Server_grid" type="GridContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.00012207
+margin_bottom = -1020.0
+rect_min_size = Vector2( 0, 60 )
+theme = SubResource( 2 )
+columns = 4
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="server_name" type="Label" parent="."]
+margin_right = 559.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+text = "Server name"
+
+[node name="creator" type="Label" parent="."]
+margin_left = 563.0
+margin_right = 1122.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+text = "Creator"
+
+[node name="count" type="Label" parent="."]
+margin_left = 1126.0
+margin_right = 1357.0
+margin_bottom = 42.0
+text = "Users connected"
+
+[node name="connect_button" type="Label" parent="."]
+margin_left = 1361.0
+margin_right = 1920.0
+margin_bottom = 42.0
+grow_vertical = 0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 3
+text = "Join"
+align = 1

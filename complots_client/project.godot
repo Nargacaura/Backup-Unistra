@@ -1,0 +1,81 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Action",
+"language": "GDScript",
+"path": "res://scripts/core/Action.gd"
+}, {
+"base": "Reference",
+"class": "Board",
+"language": "GDScript",
+"path": "res://scripts/core/Board.gd"
+}, {
+"base": "Player_Base",
+"class": "Bot",
+"language": "GDScript",
+"path": "res://scripts/core/Bot.gd"
+}, {
+"base": "Reference",
+"class": "Card",
+"language": "GDScript",
+"path": "res://scripts/core/Card.gd"
+}, {
+"base": "Player_Base",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/core/Player.gd"
+}, {
+"base": "Reference",
+"class": "Player_Base",
+"language": "GDScript",
+"path": "res://scripts/core/Player_Base.gd"
+}, {
+"base": "Node",
+"class": "Serializer",
+"language": "GDScript",
+"path": "res://scripts/Serializer.gd"
+} ]
+_global_script_class_icons={
+"Action": "",
+"Board": "",
+"Bot": "",
+"Card": "",
+"Player": "",
+"Player_Base": "",
+"Serializer": ""
+}
+
+[application]
+
+config/name="complots_client"
+run/main_scene="res://scenes/MainMenu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Network="*res://scripts/Network.gd"
+global="*res://scripts/interface/global.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=780
+window/stretch/mode="2d"
+
+[network]
+
+limits/tcp/connect_timeout_seconds=5
+
+[rendering]
+
+quality/driver/fallback_to_gles2=true
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://resources/leather-background-wallpaper-16369-baltana-sepia-background-png-1745_1160.jpg" type="Texture" id=2]
+[ext_resource path="res://resources/Fonts/Washington Text Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://resources/Fonts/Washington Text Alternates.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/interface/game_over.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 4 )
+
+[node name="GameOverPopup" type="PopupDialog"]
+margin_left = 2.0
+margin_top = -1.0
+margin_right = 891.0
+margin_bottom = 531.0
+rect_scale = Vector2( 0.67, 0.715 )
+popup_exclusive = true
+script = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = 2.46439
+margin_top = -14.0663
+margin_right = 1747.46
+margin_bottom = 1145.93
+rect_scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 4.0
+margin_top = 136.0
+margin_right = 1043.0
+margin_bottom = 850.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverText" type="Label" parent="HBoxContainer"]
+margin_right = 1039.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.988235, 0.00392157, 0.00392157, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="winner_username" type="Label" parent="HBoxContainer"]
+margin_top = 155.0
+margin_right = 1039.0
+margin_bottom = 231.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.580392, 0.27451, 0, 1 )
+text = "Player.username"
+align = 1
+valign = 1
+
+[node name="won" type="Label" parent="HBoxContainer"]
+margin_top = 235.0
+margin_right = 1039.0
+margin_bottom = 355.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "won this game!
+
+We're giving you 10 seconds before going back to the lobby."
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_top = 359.0
+margin_right = 1039.0
+margin_bottom = 487.0
+
+[node name="MenuButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_right = 1039.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.301961, 0.0156863, 0.00784314, 1 )
+text = "Disconnect from this server"
+flat = true
+
+[node name="LobbyTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="timeout" from="LobbyTimer" to="." method="_on_LobbyTimer_timeout"]

@@ -1,0 +1,36 @@
+[gd_scene format=2]
+
+[node name="Targets_Container" type="VBoxContainer"]
+margin_left = 19.0
+margin_top = 15.0
+margin_right = 219.0
+margin_bottom = 615.0
+rect_min_size = Vector2( 200, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_right = 200.0
+margin_bottom = 14.0
+text = "Targets for \"\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Target_List" type="VBoxContainer" parent="."]
+margin_top = 18.0
+margin_right = 200.0
+margin_bottom = 18.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Target_Confirm" type="Button" parent="."]
+margin_top = 22.0
+margin_right = 200.0
+margin_bottom = 42.0
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}

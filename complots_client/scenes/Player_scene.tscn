@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/Fonts/Washington Text Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/Icons/icon_tresor.png" type="Texture" id=2]
+[ext_resource path="res://resources/Icons/icon_mort.png" type="Texture" id=3]
+[ext_resource path="res://scripts/interface/Player_opponent.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[node name="Player_container" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.86371
+margin_top = 3.71191
+margin_right = -1612.14
+margin_bottom = -982.288
+rect_min_size = Vector2( 300, 0 )
+rect_scale = Vector2( 0.67, 0.715 )
+alignment = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Data_container" type="HBoxContainer" parent="."]
+margin_right = 300.0
+margin_bottom = 46.0
+alignment = 1
+
+[node name="Username" type="Label" parent="Data_container"]
+margin_left = 67.0
+margin_top = 8.0
+margin_right = 166.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "Username"
+
+[node name="Dead_icon" type="TextureRect" parent="Data_container"]
+visible = false
+margin_left = 146.0
+margin_right = 190.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 44, 0 )
+texture = ExtResource( 3 )
+
+[node name="Coin_pic" type="TextureRect" parent="Data_container"]
+margin_left = 170.0
+margin_right = 214.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 44, 0 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Balance" type="Label" parent="Data_container"]
+margin_left = 218.0
+margin_top = 8.0
+margin_right = 232.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[node name="Card_container" type="HBoxContainer" parent="."]
+margin_top = 50.0
+margin_right = 300.0
+margin_bottom = 50.0
+alignment = 1
+
+[node name="select_container" type="HBoxContainer" parent="."]
+margin_top = 54.0
+margin_right = 300.0
+margin_bottom = 94.0
+alignment = 1
+
+[node name="select_button" type="Button" parent="select_container"]
+margin_left = 50.0
+margin_right = 250.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
+custom_fonts/font = SubResource( 3 )
+button_mask = 3
+text = "Select this player"
+[connection signal="pressed" from="select_container/select_button" to="." method="_on_select_button_pressed"]

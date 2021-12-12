@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/interface/chat.gd" type="Script" id=2]
+[ext_resource path="res://resources/Fonts/SF-Mono-Regular.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://resources/Fonts/Washington Text Alternates.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://resources/Fonts/Washington Text Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.509804 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+font_data = ExtResource( 3 )
+
+[node name="Chatbox" type="VBoxContainer"]
+margin_right = 496.0
+margin_bottom = 455.0
+rect_min_size = Vector2( 600, 0 )
+rect_scale = Vector2( 0.67, 0.715 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="messages" type="RichTextLabel" parent="."]
+margin_right = 600.0
+margin_bottom = 414.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 1 )
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+scroll_following = true
+
+[node name="input" type="LineEdit" parent="."]
+margin_top = 418.0
+margin_right = 600.0
+margin_bottom = 455.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 4 )
+placeholder_text = "What do you have to say?"
+placeholder_alpha = 0.367
+[connection signal="mouse_entered" from="input" to="." method="_on_input_mouse_entered"]
+[connection signal="mouse_exited" from="input" to="." method="_on_input_mouse_exited"]
+[connection signal="text_entered" from="input" to="." method="_on_input_text_entered"]

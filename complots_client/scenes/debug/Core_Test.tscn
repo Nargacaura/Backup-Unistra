@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/debug/GameLogic.gd" type="Script" id=1]
+[ext_resource path="res://scenes/debug/Actions_Container_Test.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/debug/Targets_Container.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/debug/Card_Select_Container.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+
+[node name="Core_Test" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+card_choice = 1
+
+[node name="Board_Container" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Players" type="VBoxContainer" parent="Board_Container"]
+margin_right = 1716.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sidebar" type="ColorRect" parent="Board_Container"]
+margin_left = 1720.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 200, 0 )
+color = Color( 0.54902, 0.184314, 0.184314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sidebar_Grid" type="VBoxContainer" parent="Board_Container/Sidebar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+rect_min_size = Vector2( 200, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="Board_Container/Sidebar/Sidebar_Grid"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Game History"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text_BG" type="ColorRect" parent="Board_Container/Sidebar/Sidebar_Grid"]
+margin_top = 54.0
+margin_right = 200.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 200, 546 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.2, 0.2, 0.2, 1 )
+
+[node name="Text" type="RichTextLabel" parent="Board_Container/Sidebar/Sidebar_Grid/Text_BG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -265.0
+margin_right = 90.0
+margin_bottom = 265.0
+rect_min_size = Vector2( 180, 530 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 1 )
+bbcode_enabled = true
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Debug_Buttons" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 53.0
+margin_top = 71.0
+margin_right = 133.0
+margin_bottom = 111.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Deal_Cards" type="Button" parent="Debug_Buttons"]
+margin_right = 80.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Deal Cards"
+
+[node name="Actions_Container" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -202.0
+margin_top = -100.0
+margin_right = 202.0
+margin_bottom = 100.0
+
+[node name="Targets_Container" parent="." instance=ExtResource( 3 )]
+margin_left = 13.0
+margin_top = 22.0
+margin_right = 213.0
+margin_bottom = 576.0
+
+[node name="Card_Select_Container" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = 3.0
+margin_top = 327.0
+margin_right = 342.0
+margin_bottom = 600.0
+[connection signal="pressed" from="Debug_Buttons/Deal_Cards" to="." method="_on_Deal_Cards_pressed"]
