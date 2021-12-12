@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/GameOver/newsM.jpg</file>
+        <file>resources/GameOver/newsS.jpg</file>
+    </qresource>
+</RCC>

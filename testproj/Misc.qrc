@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/TBLogo.png</file>
+        <file>resources/Ruletable/6players.png</file>
+        <file>resources/Ruletable/45players.png</file>
+        <file>resources/Ruletable/78players.png</file>
+        <file>resources/Ruletable/TableHeader.png</file>
+        <file>resources/Misc/table.jpg</file>
+    </qresource>
+</RCC>

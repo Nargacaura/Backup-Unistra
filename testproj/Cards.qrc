@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/Cards/Adler.png</file>
+        <file>resources/Cards/BackWire.png</file>
+        <file>resources/Cards/Bomb.png</file>
+        <file>resources/Cards/DefusingWire.png</file>
+        <file>resources/Cards/Lestrade.png</file>
+        <file>resources/Cards/Moriarty.png</file>
+        <file>resources/Cards/Mrs._Hudson.png</file>
+        <file>resources/Cards/Mrs._Watson.png</file>
+        <file>resources/Cards/SafeWire.png</file>
+        <file>resources/Cards/Sbir.png</file>
+        <file>resources/Cards/Sherlock.png</file>
+        <file>resources/Cards/Watson.png</file>
+        <file>resources/Cards/Who.png</file>
+        <file>resources/Cards/WireCutter.png</file>
+    </qresource>
+</RCC>
