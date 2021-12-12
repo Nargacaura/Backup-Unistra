@@ -1,2 +1,2 @@
-# Backup-Unistra
-Backup des autres projets de Gitlab dont j'ai pu collaborer avec, mais dont l'import est impossible.
+# MNT
+Backup du [projet de prog parallèle (L3) réalisé en binôme)[https://gitlab.unistra.fr/duranndiaye/mnt2].
